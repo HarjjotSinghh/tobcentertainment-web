@@ -13,7 +13,7 @@
     --popover: 0 0% 98%;
     --popover-foreground: 210 8% 5%;
 
-    --primary: 189 90% 51%;
+    --primary: 357 100% 70%;
     --primary-foreground: 0 0% 2%;
 
     --secondary: 180 7% 94%;
@@ -22,7 +22,7 @@
     --muted: 180 7% 94%;
     --muted-foreground: 189 6% 45%;
 
-    --accent: 203 91% 56%;
+    --accent: 359 98% 47%;
     --accent-foreground: 210 8% 5%;
 
     --destructive: 0 84% 60%;
@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:bg-accent/40 selection:text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
