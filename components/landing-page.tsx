@@ -1,10 +1,26 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
-import Autoplay from "embla-carousel-autoplay"
 import { WebhookIcon } from "lucide-react"
+import {
+  A11y,
+  Autoplay,
+  FreeMode,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  Thumbs,
+} from "swiper/modules"
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react"
 
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
+import "swiper/css/autoplay"
+import "swiper/css/free-mode"
+// Import Swiper styles
+import "swiper/css"
 import {
   Accordion,
   AccordionContent,
@@ -12,13 +28,6 @@ import {
   AccordionTrigger,
 } from "./ui/accordion"
 import { Button } from "./ui/button"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel"
 
 function AppleIcon({ ...props }) {
   return (
@@ -63,9 +72,9 @@ export default function LandingPage() {
         <div className="mt-8">
           <img
             draggable={false}
-            src="https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://i.ibb.co/phBB5xk/Screenshot-2024-08-07-133311.png"
             alt="Influencers"
-            className="rounded-lg select-none xl:max-w-[530px] lg:max-w-[600px] h-auto"
+            className="rounded-lg select-none xl:max-w-[530px] lg:max-w-[500px] h-auto"
             width="1000"
             height="600"
           />
@@ -81,25 +90,25 @@ export default function LandingPage() {
           influencers.
         </p>
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div className="rounded-lg bg-accent/25 md:p-8 p-6">
+          <div className="rounded-lg bg-accent/5 md:p-8 p-6">
             <h3 className="text-center text-5xl font-extrabold">90%</h3>
             <p className="mt-2 text-center text-foreground/80">
               Engagement Rate
             </p>
           </div>
-          <div className="rounded-lg bg-accent/25 md:p-8 p-6">
+          <div className="rounded-lg bg-accent/5 md:p-8 p-6">
             <h3 className="text-center text-5xl font-extrabold">200%</h3>
             <p className="mt-2 text-center text-foreground/80">
               Increase In Views
             </p>
           </div>
-          <div className="rounded-lg bg-accent/25 md:p-8 p-6">
+          <div className="rounded-lg bg-accent/5 md:p-8 p-6">
             <h3 className="text-center text-5xl font-extrabold">85%</h3>
             <p className="mt-2 text-center text-foreground/80">
               Follower Growth
             </p>
           </div>
-          <div className="rounded-lg bg-accent/25 md:p-8 p-6">
+          <div className="rounded-lg bg-accent/5 md:p-8 p-6">
             <h3 className="text-center text-5xl font-extrabold">98%</h3>
             <p className="mt-2 text-center text-foreground/80">Brand Trust</p>
           </div>
@@ -116,7 +125,7 @@ export default function LandingPage() {
           </p>
           <div className="mt-8 grid grid-cols-1 md:gap-8 gap-6 lg:grid-cols-3">
             <div className="rounded-xl bg-background md:p-8 p-6 shadow-xl shadow-black/[0.02]">
-              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/[0.25] mx-auto rounded-full w-fit">
+              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/5 mx-auto rounded-full w-fit">
                 <WebhookIcon className="size-10 text-foreground" />
               </div>
               <h3 className="text-3xl text-center font-bold">
@@ -128,7 +137,7 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="rounded-xl bg-background md:p-8 p-6 shadow-xl shadow-black/[0.02]">
-              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/[0.25] mx-auto rounded-full w-fit">
+              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/5 mx-auto rounded-full w-fit">
                 <WebhookIcon className="size-10 text-foreground" />
               </div>
               <h3 className="text-3xl text-center font-bold">
@@ -141,7 +150,7 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="rounded-xl bg-background md:p-8 p-6 shadow-xl shadow-black/[0.02]">
-              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/[0.25] mx-auto rounded-full w-fit">
+              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/5 mx-auto rounded-full w-fit">
                 <WebhookIcon className="size-10 text-foreground" />
               </div>
               <h3 className="text-3xl text-center font-bold">
@@ -153,7 +162,7 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="rounded-xl bg-background md:p-8 p-6 shadow-xl shadow-black/[0.02]">
-              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/[0.25] mx-auto rounded-full w-fit">
+              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/5 mx-auto rounded-full w-fit">
                 <WebhookIcon className="size-10 text-foreground" />
               </div>
               <h3 className="text-3xl text-center font-bold">
@@ -166,7 +175,7 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="rounded-xl bg-background md:p-8 p-6 shadow-xl shadow-black/[0.02]">
-              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/[0.25] mx-auto rounded-full w-fit">
+              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/5 mx-auto rounded-full w-fit">
                 <WebhookIcon className="size-10 text-foreground" />
               </div>
               <h3 className="text-3xl text-center font-bold">Deep Insights</h3>
@@ -177,7 +186,7 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="rounded-xl bg-background md:p-8 p-6 shadow-xl shadow-black/[0.02]">
-              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/[0.25] mx-auto rounded-full w-fit">
+              <div className="p-8 shadow-lg mb-8 shadow-black/5 bg-accent/5 mx-auto rounded-full w-fit">
                 <WebhookIcon className="size-10 text-foreground" />
               </div>
               <h3 className="text-3xl text-center font-bold">
@@ -454,7 +463,7 @@ export default function LandingPage() {
                 height={100}
                 className="aspect-square -mt-16"
               />
-              <h3 className="text-3xl text-left mt-4 font-bold">
+              <h3 className="tracking-tight text-3xl text-left mt-4 font-bold">
                 Campaign Overview
               </h3>
               <p className="mt-2 text-left text-foreground/80">
@@ -470,7 +479,7 @@ export default function LandingPage() {
                 height={100}
                 className="aspect-square -mt-16"
               />
-              <h3 className="text-3xl text-left mt-4 font-bold">
+              <h3 className="tracking-tight text-3xl text-left mt-4 font-bold">
                 Deliverables Determination
               </h3>
               <p className="mt-2 text-left text-foreground/80">
@@ -487,7 +496,7 @@ export default function LandingPage() {
                 height={100}
                 className="aspect-square -mt-16"
               />
-              <h3 className="text-3xl text-left mt-4 font-bold">
+              <h3 className="tracking-tight text-3xl text-left mt-4 font-bold">
                 Budget Allocation
               </h3>
               <p className="mt-2 text-left text-foreground/80">
@@ -503,7 +512,7 @@ export default function LandingPage() {
                 height={100}
                 className="aspect-square -mt-16"
               />
-              <h3 className="text-3xl text-left mt-4 font-bold">
+              <h3 className="tracking-tight text-3xl text-left mt-4 font-bold">
                 List Presentation
               </h3>
               <p className="mt-2 text-left text-foreground/80">
@@ -519,7 +528,7 @@ export default function LandingPage() {
                 height={100}
                 className="aspect-square -mt-16"
               />
-              <h3 className="text-3xl text-left mt-4 font-bold">
+              <h3 className="tracking-tight text-3xl text-left mt-4 font-bold">
                 Quotation Process
               </h3>
               <p className="mt-2 text-left text-foreground/80">
@@ -536,7 +545,7 @@ export default function LandingPage() {
                 height={100}
                 className="aspect-square -mt-16"
               />
-              <h3 className="text-3xl text-left mt-4 font-bold">
+              <h3 className="tracking-tight text-3xl text-left mt-4 font-bold">
                 Finalization
               </h3>
               <p className="mt-2 text-left text-foreground/80">
@@ -644,199 +653,203 @@ export default function LandingPage() {
           Our clients can’t stop raving about us!
         </p>
         <div className="w-full max-w-7xl mx-auto mt-8">
-          <Carousel
-            opts={{
-              align: "start",
-              dragFree: false,
-              loop: true,
+          <Swiper
+            modules={[Navigation, Pagination, A11y, Autoplay, FreeMode]}
+            spaceBetween={50}
+            freeMode={true}
+            loop={true}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: true,
+              pauseOnMouseEnter: true,
             }}
-            plugins={[Autoplay({ delay: 3500, playOnInit: true })]}
+            allowTouchMove={true}
+            effect="cretive"
+            slidesPerView={3}
+            navigation
+            pagination={{ clickable: true, bulletClass: "text-primary" }}
+            centeredSlides={true}
+            className="overflow-visible"
           >
-            <CarouselContent className="ml-8">
-              <CarouselItem className="pl-8 lg:basis-1/3 md:basis-1/2 basis-full">
-                <div className="grid items-start bg-accent/25 rounded-xl justify-center lg:p-8 p-6 h-full">
-                  <div className="grid gap-3 lg:gap-5">
-                    <p className="text-lg lg:text-xl">
-                      &ldquo;I was amazed by the quality of service. The team
-                      was professional, courteous, and efficient
-                      throughout.&ldquo;
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <div className="rounded-full overflow-hidden w-10 h-10">
-                        <img
-                          draggable={false}
-                          src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          width="40"
-                          height="40"
-                          alt="Profile"
-                          className="object-cover w-full h-full"
-                          style={{ aspectRatio: "40/40", objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="text-sm font-semibold">
-                        <div>Emily Patel</div>
-                        <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
-                          Marketing Manager
-                        </div>
+            <SwiperSlide className="overflow-visible">
+              <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center lg:p-8 p-6 h-full">
+                <div className="grid gap-3 lg:gap-5">
+                  <p className="text-lg lg:text-xl">
+                    &ldquo;I was amazed by the quality of service. The team was
+                    professional, courteous, and efficient throughout.&ldquo;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="rounded-full overflow-hidden w-10 h-10">
+                      <img
+                        draggable={false}
+                        src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        width="40"
+                        height="40"
+                        alt="Profile"
+                        className="object-cover w-full h-full"
+                        style={{ aspectRatio: "40/40", objectFit: "cover" }}
+                      />
+                    </div>
+                    <div className="text-sm font-semibold">
+                      <div>Emily Patel</div>
+                      <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
+                        Marketing Manager
                       </div>
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
-              <CarouselItem className="pl-8 lg:basis-1/3 md:basis-1/2 basis-full">
-                <div className="grid items-start bg-accent/25 rounded-xl justify-center lg:p-8 p-6 h-full">
-                  <div className="grid gap-3 lg:gap-5">
-                    <p className="text-lg lg:text-xl">
-                      &ldquo;The level of expertise and attention to detail
-                      demonstrated by the team was truly impressive. I would
-                      highly recommend their services to anyone.&ldquo;
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <div className="rounded-full overflow-hidden w-10 h-10">
-                        <img
-                          draggable={false}
-                          src="https://images.pexels.com/photos/20094341/pexels-photo-20094341/free-photo-of-portrait-of-man-wearing-brown-cap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          width="40"
-                          height="40"
-                          alt="Profile"
-                          className="object-cover w-full h-full"
-                          style={{ aspectRatio: "40/40", objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="text-sm font-semibold">
-                        <div>Adam Turner</div>
-                        <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
-                          CEO, Horizon Inc
-                        </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="overflow-visible">
+              <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center lg:p-8 p-6 h-full">
+                <div className="grid gap-3 lg:gap-5">
+                  <p className="text-lg lg:text-xl">
+                    &ldquo;The level of expertise and attention to detail
+                    demonstrated by the team was truly impressive. I would
+                    highly recommend their services to anyone.&ldquo;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="rounded-full overflow-hidden w-10 h-10">
+                      <img
+                        draggable={false}
+                        src="https://images.pexels.com/photos/20094341/pexels-photo-20094341/free-photo-of-portrait-of-man-wearing-brown-cap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        width="40"
+                        height="40"
+                        alt="Profile"
+                        className="object-cover w-full h-full"
+                        style={{ aspectRatio: "40/40", objectFit: "cover" }}
+                      />
+                    </div>
+                    <div className="text-sm font-semibold">
+                      <div>Adam Turner</div>
+                      <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
+                        CEO, Horizon Inc
                       </div>
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
-              <CarouselItem className="pl-8 lg:basis-1/3 md:basis-1/2 basis-full">
-                <div className="grid items-start bg-accent/25 rounded-xl justify-center lg:p-8 p-6 h-full">
-                  <div className="grid gap-3 lg:gap-5">
-                    <p className="text-lg lg:text-xl">
-                      &ldquo;The support team was incredibly helpful and
-                      responsive. They resolved my issue in no time, and I
-                      couldn&apos;t be happier with the service.&ldquo;
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <div className="rounded-full overflow-hidden w-10 h-10">
-                        <img
-                          draggable={false}
-                          src="https://images.pexels.com/photos/13081260/pexels-photo-13081260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          width="40"
-                          height="40"
-                          alt="Profile"
-                          className="object-cover w-full h-full"
-                          style={{ aspectRatio: "40/40", objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="text-sm font-semibold">
-                        <div>Sophia Lee</div>
-                        <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
-                          Customer Support Representative
-                        </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="overflow-visible">
+              <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center lg:p-8 p-6 h-full">
+                <div className="grid gap-3 lg:gap-5">
+                  <p className="text-lg lg:text-xl">
+                    &ldquo;The support team was incredibly helpful and
+                    responsive. They resolved my issue in no time, and I
+                    couldn&apos;t be happier with the service.&ldquo;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="rounded-full overflow-hidden w-10 h-10">
+                      <img
+                        draggable={false}
+                        src="https://images.pexels.com/photos/13081260/pexels-photo-13081260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        width="40"
+                        height="40"
+                        alt="Profile"
+                        className="object-cover w-full h-full"
+                        style={{ aspectRatio: "40/40", objectFit: "cover" }}
+                      />
+                    </div>
+                    <div className="text-sm font-semibold">
+                      <div>Sophia Lee</div>
+                      <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
+                        Customer Support Representative
                       </div>
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
-              <CarouselItem className="pl-8 lg:basis-1/3 md:basis-1/2 basis-full">
-                <div className="grid items-start bg-accent/25 rounded-xl justify-center lg:p-8 p-6 h-full">
-                  <div className="grid gap-3 lg:gap-5">
-                    <p className="text-lg lg:text-xl">
-                      &ldquo;I was amazed by the quality of service. The team
-                      was professional, courteous, and efficient
-                      throughout.&ldquo;
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <div className="rounded-full overflow-hidden w-10 h-10">
-                        <img
-                          draggable={false}
-                          src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          width="40"
-                          height="40"
-                          alt="Profile"
-                          className="object-cover w-full h-full"
-                          style={{ aspectRatio: "40/40", objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="text-sm font-semibold">
-                        <div>Emily Patel</div>
-                        <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
-                          Marketing Manager
-                        </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="overflow-visible">
+              <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center lg:p-8 p-6 h-full">
+                <div className="grid gap-3 lg:gap-5">
+                  <p className="text-lg lg:text-xl">
+                    &ldquo;I was amazed by the quality of service. The team was
+                    professional, courteous, and efficient throughout.&ldquo;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="rounded-full overflow-hidden w-10 h-10">
+                      <img
+                        draggable={false}
+                        src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        width="40"
+                        height="40"
+                        alt="Profile"
+                        className="object-cover w-full h-full"
+                        style={{ aspectRatio: "40/40", objectFit: "cover" }}
+                      />
+                    </div>
+                    <div className="text-sm font-semibold">
+                      <div>Emily Patel</div>
+                      <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
+                        Marketing Manager
                       </div>
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
-              <CarouselItem className="pl-8 lg:basis-1/3 md:basis-1/2 basis-full">
-                <div className="grid items-start bg-accent/25 rounded-xl justify-center lg:p-8 p-6 h-full">
-                  <div className="grid gap-3 lg:gap-5">
-                    <p className="text-lg lg:text-xl">
-                      &ldquo;The level of expertise and attention to detail
-                      demonstrated by the team was truly impressive. I would
-                      highly recommend their services to anyone.&ldquo;
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <div className="rounded-full overflow-hidden w-10 h-10">
-                        <img
-                          draggable={false}
-                          src="https://images.pexels.com/photos/20094341/pexels-photo-20094341/free-photo-of-portrait-of-man-wearing-brown-cap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          width="40"
-                          height="40"
-                          alt="Profile"
-                          className="object-cover w-full h-full"
-                          style={{ aspectRatio: "40/40", objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="text-sm font-semibold">
-                        <div>Adam Turner</div>
-                        <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
-                          CEO, Horizon Inc
-                        </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="overflow-visible">
+              <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center lg:p-8 p-6 h-full">
+                <div className="grid gap-3 lg:gap-5">
+                  <p className="text-lg lg:text-xl">
+                    &ldquo;The level of expertise and attention to detail
+                    demonstrated by the team was truly impressive. I would
+                    highly recommend their services to anyone.&ldquo;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="rounded-full overflow-hidden w-10 h-10">
+                      <img
+                        draggable={false}
+                        src="https://images.pexels.com/photos/20094341/pexels-photo-20094341/free-photo-of-portrait-of-man-wearing-brown-cap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        width="40"
+                        height="40"
+                        alt="Profile"
+                        className="object-cover w-full h-full"
+                        style={{ aspectRatio: "40/40", objectFit: "cover" }}
+                      />
+                    </div>
+                    <div className="text-sm font-semibold">
+                      <div>Adam Turner</div>
+                      <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
+                        CEO, Horizon Inc
                       </div>
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
-              <CarouselItem className="pl-8 lg:basis-1/3 md:basis-1/2 basis-full">
-                <div className="grid items-start bg-accent/25 rounded-xl justify-center lg:p-8 p-6 h-full">
-                  <div className="grid gap-3 lg:gap-5">
-                    <p className="text-lg lg:text-xl">
-                      &ldquo;The support team was incredibly helpful and
-                      responsive. They resolved my issue in no time, and I
-                      couldn&apos;t be happier with the service.&ldquo;
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <div className="rounded-full overflow-hidden w-10 h-10">
-                        <img
-                          draggable={false}
-                          src="https://images.pexels.com/photos/13081260/pexels-photo-13081260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          width="40"
-                          height="40"
-                          alt="Profile"
-                          className="object-cover w-full h-full"
-                          style={{ aspectRatio: "40/40", objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="text-sm font-semibold">
-                        <div>Sophia Lee</div>
-                        <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
-                          Customer Support Representative
-                        </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="overflow-visible">
+              <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center lg:p-8 p-6 h-full">
+                <div className="grid gap-3 lg:gap-5">
+                  <p className="text-lg lg:text-xl">
+                    &ldquo;The support team was incredibly helpful and
+                    responsive. They resolved my issue in no time, and I
+                    couldn&apos;t be happier with the service.&ldquo;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="rounded-full overflow-hidden w-10 h-10">
+                      <img
+                        draggable={false}
+                        src="https://images.pexels.com/photos/13081260/pexels-photo-13081260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        width="40"
+                        height="40"
+                        alt="Profile"
+                        className="object-cover w-full h-full"
+                        style={{ aspectRatio: "40/40", objectFit: "cover" }}
+                      />
+                    </div>
+                    <div className="text-sm font-semibold">
+                      <div>Sophia Lee</div>
+                      <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
+                        Customer Support Representative
                       </div>
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="ml-16" />
-            <CarouselNext className="mr-16" />
-          </Carousel>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
       <section className="bg-background px-8 py-24">
@@ -854,7 +867,7 @@ export default function LandingPage() {
           className="max-w-3xl mx-auto flex flex-col gap-4 mt-8"
         >
           <AccordionItem
-            className="bg-accent/25 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+            className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-1"
           >
             <AccordionTrigger>
@@ -865,7 +878,7 @@ export default function LandingPage() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="bg-accent/25 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+            className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-2"
           >
             <AccordionTrigger>
@@ -876,7 +889,7 @@ export default function LandingPage() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="bg-accent/25 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+            className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-3"
           >
             <AccordionTrigger>
@@ -887,7 +900,7 @@ export default function LandingPage() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="bg-accent/25 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+            className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-4"
           >
             <AccordionTrigger>
@@ -898,7 +911,7 @@ export default function LandingPage() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            className="bg-accent/25 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+            className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-5"
           >
             <AccordionTrigger>

@@ -33,6 +33,9 @@
     --ring: 190 24% 75%;
 
     --radius: 0.5rem;
+
+    --swiper-pagination-color: hsl(var(--primary));
+    --swiper-navigation-color: hsl(var(--primary));
   }
 
   .dark {
@@ -80,4 +83,8 @@
   .animation-pause {
     animation-play-state: paused;
   }
+}
+
+.swiper-pagination-bullet .swiper-pagination-bullet-active {
+  @apply !bg-primary text-primary-foreground;
 }
