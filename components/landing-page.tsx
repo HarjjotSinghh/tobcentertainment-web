@@ -426,7 +426,7 @@ export default function LandingPage() {
                 draggable={false}
                 src={celeb.imageSrc}
                 alt="Influencer"
-                className="rounded-xl aspect-[3.75/5] object-cover select-none"
+                className="rounded-xl aspect-[3.75/5] min-w-[187px] object-cover select-none"
                 width="187"
                 height="250"
               />
@@ -435,7 +435,7 @@ export default function LandingPage() {
                   draggable={false}
                   src={celeb.imageSrc}
                   alt="Influencer"
-                  className="rounded-full h-fit flex-1 aspect-square object-cover"
+                  className="rounded-full h-fit flex-1 aspect-square object-cover max-w-[40px]"
                   width="40"
                   height="40"
                 />
