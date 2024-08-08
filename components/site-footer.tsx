@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function SiteFooter() {
   return (
@@ -17,8 +18,20 @@ export default function SiteFooter() {
             </div>
 
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-center">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-              consequuntur amet culpa cum itaque neque.
+              Address: Flat No. 12, Buliding F7, Khodaram Building, Mumbai,
+              Maharastra 401501
+              <br />
+              GST Number: 27AAKCT3388B1Z6
+              <br />
+              Contact: 8077552630 <br />
+              E-Mail:{" "}
+              <Link
+                target="_blank"
+                rel="noreferrer noopener"
+                href="mailto:tobcentertainment@gmail.com"
+              >
+                tobcentertainment@gmail.com
+              </Link>
             </p>
           </div>
 
@@ -66,7 +79,8 @@ export default function SiteFooter() {
         </div>
 
         <p className="mt-12 text-center text-sm text-gray-500 lg:text-center">
-          Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+          Copyright &copy; {new Date().getFullYear()} Tobc Entertainment OPC
+          Private limited. All rights reserved.
         </p>
       </div>
     </footer>

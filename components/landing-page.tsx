@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { WebhookIcon } from "lucide-react"
 import {
@@ -21,6 +21,8 @@ import "swiper/css/autoplay"
 import "swiper/css/free-mode"
 // Import Swiper styles
 import "swiper/css"
+import Image from "next/image"
+
 import {
   Accordion,
   AccordionContent,
@@ -49,7 +51,87 @@ function AppleIcon({ ...props }) {
   )
 }
 
+const celebreties = [
+  {
+    name: "Sonu Sood",
+    imageSrc: "/celebrities/1.webp",
+    tag: "@sonu_sood",
+  },
+  {
+    name: "Randeep Hooda",
+    imageSrc: "/celebrities/2.webp",
+    tag: "@randeephooda",
+  },
+  {
+    name: "Rohit Suresh Saraf",
+    imageSrc: "/celebrities/3.webp",
+    tag: "@rohitsaraf",
+  },
+  {
+    name: "Vaani Kapoor",
+    imageSrc: "/celebrities/4.webp",
+    tag: "@vaanikapoor",
+  },
+  {
+    name: "Ali Fazal",
+    imageSrc: "/celebrities/5.webp",
+    tag: "@alifazal9",
+  },
+  {
+    name: "Raghav Juyal",
+    imageSrc: "/celebrities/6.webp",
+    tag: "@raghavjuyal",
+  },
+  {
+    name: "Sunil Grover",
+    imageSrc: "/celebrities/7.webp",
+    tag: "@whosunilgrover",
+  },
+  {
+    name: "Sonali Bendre",
+    imageSrc: "/celebrities/8.webp",
+    tag: "@iamsonalibendre",
+  },
+  {
+    name: "Adah Sharma",
+    imageSrc: "/celebrities/9.webp",
+    tag: "@adah_ki_adah",
+  },
+  {
+    name: "Malaika Arora",
+    imageSrc: "/celebrities/10.webp",
+    tag: "@malaikaaroraofficial",
+  },
+  {
+    name: "Neha Sharma",
+    imageSrc: "/celebrities/11.webp",
+    tag: "@nehasharmaofficial",
+  },
+  {
+    name: "Richa Chadha",
+    imageSrc: "/celebrities/12.webp",
+    tag: "@the_richa_chadha",
+  },
+]
+
 export default function LandingPage() {
+  const [screenSize, setScreenSize] = useState<null | "lg" | "md" | "sm">(null)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setScreenSize("sm")
+      } else if (window.innerWidth < 1024) {
+        setScreenSize("md")
+      } else {
+        setScreenSize("lg")
+      }
+    }
+    window.addEventListener("resize", handleResize)
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   return (
     <div className="w-full text-foreground">
       <section className="flex lg:flex-row flex-col lg:gap-16 gap-12 items-center justify-center bg-accent/5 px-8 py-32 pt-44">
@@ -334,38 +416,84 @@ export default function LandingPage() {
       </section>
       <section className="bg-accent/5 px-8 py-24 ">
         <div className="flex-row sm:flex hidden -mt-44 flex-nowrap justify-center md:gap-12 gap-8 overflow-x-hidden">
-          {Array.from({ length: 7 }).map((_, i) => (
+          {celebreties.map((celeb, i) => (
             <div
               className={`${
                 i % 2 === 0 ? (i % 3 === 0 ? "mt-48" : "mt-24") : "mt-8"
               }`}
             >
-              <img
+              <Image
                 draggable={false}
-                src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src={celeb.imageSrc}
                 alt="Influencer"
                 className="rounded-xl aspect-[3.75/5] object-cover select-none"
-                width="187.5"
+                width="187"
                 height="250"
               />
               <div className="flex flex-row justify-center gap-2 mt-4">
-                <img
+                <Image
                   draggable={false}
-                  src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src={celeb.imageSrc}
                   alt="Influencer"
                   className="rounded-full h-fit flex-1 aspect-square object-cover"
                   width="40"
                   height="40"
                 />
                 <div className="flex w-fit flex-col justify-start gap-2">
-                  <h3 className="text-sm font-semibold">Influencer Name</h3>
-                  <p className="text-sm -mt-2">@influencer_name</p>
+                  <h3 className="text-sm font-semibold">{celeb.name}</h3>
+                  <p className="text-sm -mt-2">{celeb.tag}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <h2 className="tracking-tighter text-center lg:text-6xl md:text-5xl text-4xl font-medium">
+        {screenSize === "sm" && (
+          <Swiper
+            modules={[Navigation, Pagination, A11y, Autoplay]}
+            spaceBetween={50}
+            loop={true}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: true,
+              pauseOnMouseEnter: true,
+            }}
+            allowTouchMove={true}
+            effect="cretive"
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true, bulletClass: "text-primary" }}
+            centeredSlides={true}
+            className="overflow-visible"
+          >
+            {celebreties.map((celeb, i) => (
+              <SwiperSlide className="overflow-visible">
+                <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center flex-col lg:p-8 p-6 h-full">
+                  <div className="grid gap-3 lg:gap-5">
+                    <div className="flex flex-col justify-center gap-4 items-center space-x-3">
+                      <div className="">
+                        <Image
+                          draggable={false}
+                          src={celeb.imageSrc}
+                          alt="Profile"
+                          className="object-cover w-full h-full aspect-[374/500] rounded-lg"
+                          width="374"
+                          height="500"
+                        />
+                      </div>
+                      <div className="text-xl font-bold tracking-tight text-center">
+                        <div>{celeb.name}</div>
+                        <div className="text-sm -mt-0.5 text-foreground/60 font-medium">
+                          {celeb.tag}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+        <h2 className="tracking-tighter text-center lg:text-6xl md:text-5xl text-4xl font-medium mt-8">
           Our <span className="font-extrabold">Story</span>
         </h2>
         <p className="mt-8 text-center text-lg text-foreground max-w-4xl mx-auto">
@@ -399,7 +527,7 @@ export default function LandingPage() {
           TOBC Entertainment, we specialize in crafting captivating narratives
           that resonate deeply with your audience.
         </p>
-        <section className="flex lg:flex-row flex-col lg:gap-16 gap-8 items-center justify-center px-8 py-32 pt-12">
+        <section className="flex lg:flex-row flex-col lg:gap-16 gap-8 items-center justify-center px-4 py-32 pt-12">
           <div className="flex flex-col items-start justify-start">
             <p className="mt-6 max-w-lg text-foreground/80 font-semibold text-left text-xl">
               Discover why leading brands choose us as their trusted ally in
@@ -438,7 +566,7 @@ export default function LandingPage() {
               draggable={false}
               src="https://images.pexels.com/photos/6248976/pexels-photo-6248976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Influencers"
-              className="rounded-lg select-none xl:max-w-xl max-w-lg h-auto"
+              className="rounded-lg select-none xl:max-w-xl max-w-lg w-full h-auto"
               width="1000"
               height="600"
             />
@@ -453,7 +581,7 @@ export default function LandingPage() {
           <p className="mt-4 text-center text-lg text-foreground/80">
             Discover how we craft top influencer strategies, start to finish.
           </p>
-          <div className="mt-16 grid grid-cols-1 md:gap-8 gap-6 lg:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-3">
             <div className="rounded-xl bg-background md:p-8 p-6 shadow-xl shadow-black/[0.02]">
               <img
                 draggable={false}
@@ -652,25 +780,42 @@ export default function LandingPage() {
         <p className="mt-4 text-center text-lg text-foreground/80">
           Our clients can’t stop raving about us!
         </p>
+        {/* {console.log(screenSize)} */}
         <div className="w-full max-w-7xl mx-auto mt-8">
           <Swiper
-            modules={[Navigation, Pagination, A11y, Autoplay, FreeMode]}
+            modules={[Navigation, Pagination, A11y, Autoplay]}
             spaceBetween={50}
-            freeMode={true}
             loop={true}
             autoplay={{
               delay: 3500,
               disableOnInteraction: true,
               pauseOnMouseEnter: true,
             }}
+            breakpoints={{
+              // when window width is >= 320px
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+              },
+              // when window width is >= 480px
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+              },
+              // when window width is >= 640px
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+            }}
             allowTouchMove={true}
             effect="cretive"
-            slidesPerView={3}
+            slidesPerView={1}
             navigation
             pagination={{ clickable: true, bulletClass: "text-primary" }}
             centeredSlides={true}
-            className="overflow-visible"
           >
+            {/* {console.log(screenSize)} */}
             <SwiperSlide className="overflow-visible">
               <div className="overflow-visible grid shadow-xl shadow-foreground/5 items-start bg-accent/5 rounded-xl justify-center lg:p-8 p-6 h-full">
                 <div className="grid gap-3 lg:gap-5">
@@ -870,7 +1015,7 @@ export default function LandingPage() {
             className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-1"
           >
-            <AccordionTrigger>
+            <AccordionTrigger className="text-left">
               What Types of Influencers Do You Work With?
             </AccordionTrigger>
             <AccordionContent>
@@ -881,7 +1026,7 @@ export default function LandingPage() {
             className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-2"
           >
-            <AccordionTrigger>
+            <AccordionTrigger className="text-left">
               How does our agency select influencers?
             </AccordionTrigger>
             <AccordionContent>
@@ -892,7 +1037,7 @@ export default function LandingPage() {
             className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-3"
           >
-            <AccordionTrigger>
+            <AccordionTrigger className="text-left">
               Can I choose the influencers I want to work with?
             </AccordionTrigger>
             <AccordionContent>
@@ -903,7 +1048,7 @@ export default function LandingPage() {
             className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-4"
           >
-            <AccordionTrigger>
+            <AccordionTrigger className="text-left">
               How much does an influencer marketing campaign cost?
             </AccordionTrigger>
             <AccordionContent>
@@ -914,7 +1059,7 @@ export default function LandingPage() {
             className="bg-accent/5 shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
             value="item-5"
           >
-            <AccordionTrigger>
+            <AccordionTrigger className="text-left">
               How do you ensure the content aligns with our brand?
             </AccordionTrigger>
             <AccordionContent>
