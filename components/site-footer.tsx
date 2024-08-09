@@ -12,8 +12,10 @@ export default function SiteFooter() {
               <Image
                 src="/logo-wide.png"
                 alt="TOBC Entertainment Logo"
+                className="mix-blend-darken select-none"
                 width={118}
                 height={24}
+                draggable={false}
               />
             </div>
 

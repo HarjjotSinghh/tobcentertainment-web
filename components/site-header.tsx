@@ -16,7 +16,8 @@ export function SiteHeader() {
           <Image
             src="/logo-wide.png"
             alt="TOBC Entertainment"
-            className="mix-blend-darken"
+            className="mix-blend-darken select-none"
+            draggable={false}
             width={100}
             height={100}
           />

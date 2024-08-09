@@ -692,82 +692,30 @@ export default function LandingPage() {
             We help brands and agencies excel in influencer marketing, globally.
           </p>
           <section className="py-8">
-            <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+            <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)] mix-blend-multiply">
               <div className="animate-slide-left group-hover:animation-pause inline-block w-max">
-                <img
-                  draggable={false}
-                  className="mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
-                  alt="Transistor"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
-                  alt="Reform"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
-                  alt="Tuple"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
-                  alt="SavvyCal"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
-                  alt="SavvyCal"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/laravel-logo-white.svg"
-                  alt="SavvyCal"
-                />
+                {Array.from({ length: 27 }).map((i: any, index: number) => (
+                  <Image
+                    draggable={false}
+                    width={400}
+                    height={300}
+                    className="mx-8 inline h-32 rounded-lg object-cover w-auto aspect-[4/3]"
+                    src={`/brands/${index + 1}.webp`}
+                    alt={`Brand ${index + 1}`}
+                  />
+                ))}
               </div>
               <div className="animate-slide-left group-hover:animation-pause inline-block w-max">
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
-                  alt="Transistor"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
-                  alt="Reform"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
-                  alt="Tuple"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
-                  alt="SavvyCal"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
-                  alt="SavvyCal"
-                />
-                <img
-                  draggable={false}
-                  className="brightness-0 grayscale-0 mx-8 inline h-16"
-                  src="https://tailwindui.com/img/logos/158x48/laravel-logo-white.svg"
-                  alt="SavvyCal"
-                />
+                {Array.from({ length: 27 }).map((i: any, index: number) => (
+                  <Image
+                    draggable={false}
+                    width={400}
+                    height={300}
+                    className="mx-8 inline h-32 rounded-lg object-cover w-auto aspect-[4/3]"
+                    src={`/brands/${index + 1}.webp`}
+                    alt={`Brand ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </section>
