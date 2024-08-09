@@ -20,8 +20,7 @@ export default function SiteFooter() {
             </div>
 
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-center">
-              Address: Flat No. 12, Buliding F7, Khodaram Building, Mumbai,
-              Maharastra 401501
+              Address: Flat No. 12, Khodaram Building, Mumbai, Maharastra 401501
               <br />
               GST Number: 27AAKCT3388B1Z6
               <br />
