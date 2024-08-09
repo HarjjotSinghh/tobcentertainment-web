@@ -686,7 +686,7 @@ export default function LandingPage() {
       <section className="bg-background px-8 py-24">
         <div className="mx-auto max-w-7xl">
           <h2 className="tracking-tighter text-center lg:text-6xl md:text-5xl text-4xl font-medium">
-            Our <span className="font-extrabold">Clientele</span>
+            Our <span className="font-extrabold">Clients</span>
           </h2>
           <p className="mt-4 text-center text-lg text-foreground/80">
             We help brands and agencies excel in influencer marketing, globally.
