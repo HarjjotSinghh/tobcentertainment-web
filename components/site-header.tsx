@@ -23,28 +23,17 @@ export function SiteHeader() {
           />
         </div>
       </div>
-      <nav className="sm:flex hidden space-x-8">
-        <Link
-          href="#"
-          className="text-foreground  hover:underline"
-          prefetch={false}
-        >
-          Home
-        </Link>
-        <Link
-          href="#"
-          className="text-foreground  hover:underline"
-          prefetch={false}
-        >
-          About
-        </Link>
-        <Link
-          href="#"
-          className="text-foreground  hover:underline"
-          prefetch={false}
-        >
-          Contact
-        </Link>
+      <nav className="lg:flex hidden space-x-8">
+        {siteConfig.mainNav.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className="text-foreground/80 hover:text-foreground transition-all duration-300 ease-in-out hover:underline"
+            prefetch={false}
+          >
+            {item.title}
+          </Link>
+        ))}
       </nav>
     </header>
   )

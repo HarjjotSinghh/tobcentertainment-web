@@ -4,15 +4,19 @@ import { Metadata } from "next"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import ZyfloNavbar, {
+  ZyfloNavbarLogoComponent,
+} from "@/components/zyflo/navbar"
 
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   themeColor: [
@@ -47,7 +51,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem={false}
           >
             <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
+              <ZyfloNavbar
+                items={siteConfig.mainNav}
+                logo={{
+                  src: "/logo-wide.png",
+                  alt: "TOBC Entertainment",
+                  width: 300,
+                  height: 100,
+                }}
+              />
               <div className="flex-1">{children}</div>
               <SiteFooter />
             </div>
