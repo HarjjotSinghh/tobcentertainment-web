@@ -5,14 +5,10 @@ import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/sonner"
-import { Icons } from "@/components/icons"
 import SiteFooter from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import ZyfloNavbar, {
-  ZyfloNavbarLogoComponent,
-} from "@/components/zyflo/navbar"
+import ZyfloNavbar from "@/components/zyflo/navbar"
 
 export const metadata: Metadata = {
   title: {
@@ -46,10 +42,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider
-            forcedTheme="light"
             attribute="class"
             defaultTheme="light"
-            enableSystem={false}
+            forcedTheme="light"
           >
             <div className="relative flex min-h-screen flex-col">
               <ZyfloNavbar
