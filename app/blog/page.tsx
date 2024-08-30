@@ -1,68 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export const blogPosts = [
-  {
-    id: "1",
-    title: "The Rise of Influencer Marketing",
-    description:
-      "Influencer marketing has become a powerful tool for brands to reach their target audience. This blog post explores the reasons behind its popularity and effectiveness.",
-    imageSrc:
-      "https://www.collectivealternative.com/wp-content/uploads/2023/06/Influencer-Marketing-Indianapolis.jpg",
-    content: `# The Rise of Influencer Marketing
-
-## Introduction
-
-Influencer marketing has become a powerful tool for brands to reach their target audience. This blog post explores the reasons behind its popularity and effectiveness.
-
-### Key Points
-
-- *Authenticity*: Influencers build trust with their followers
-- **Targeted Reach**: Access to niche audiences
-- Increased Engagement: Higher interaction rates compared to traditional advertisings
-`,
-  },
-  {
-    id: "2",
-    title: "The Future of AI in Marketing",
-    description:
-      "AI is revolutionizing marketing. This blog post explores the latest trends and technologies in AI-powered marketing.",
-    imageSrc: "https://images.mktw.net/im-65389404?width=1260&height=876",
-    content: `# The Future of AI in Marketing
-
-## Introduction
-
-AI is revolutionizing marketing. This blog post explores the latest trends and technologies in AI-powered marketing.
-
-### Key Points
-
-- **Personalization**: AI enables personalized marketing experiences
-- **Automation**: Reduces manual work and increases efficiency
-- **Data Insights**: Provides valuable insights from data analysis
-
-`,
-  },
-  {
-    id: "3",
-    title: "The Importance of UX in Marketing",
-    description:
-      "User experience is crucial in marketing. This blog post explores the importance of user experience in marketing.",
-    imageSrc:
-      "https://images.wondershare.com/mockitt/ux-beginner/marketing-ux-logo.jpg",
-    content: `# The Importance of User Experience in Marketing
-
-## Introduction
-
-User experience is crucial in marketing. This blog post explores the importance of user experience in marketing.
-
-### Key Points
-
-- **User-Centric**: Focus on user needs and preferences
-- **Engagement**: Higher user engagement and retention
-- **Brand Loyalty**: Strong user experience leads to brand loyalty
-`,
-  },
-]
+import { blogPosts } from "@/config/site"
 
 export default function BlogPage() {
   return (

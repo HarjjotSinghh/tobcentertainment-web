@@ -3,9 +3,8 @@ import { notFound } from "next/navigation"
 import { ArrowLeftIcon } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 
+import { blogPosts } from "@/config/site"
 import { Button } from "@/components/ui/button"
-
-import { blogPosts } from "../page"
 
 export default function BlogPost({ params }: { params: { id: string } }) {
   const post = blogPosts.find((p) => p.id === params.id)

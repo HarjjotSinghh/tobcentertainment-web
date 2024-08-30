@@ -21,9 +21,8 @@ import "swiper/css/free-mode"
 import "swiper/css"
 import Image from "next/image"
 
-import { celebreties } from "@/config/site"
+import { caseStudies, celebreties } from "@/config/site"
 import { WorkItem } from "@/components/work-item"
-import { caseStudies } from "@/app/case-studies/[caseStudy]/page"
 
 import {
   Accordion,
