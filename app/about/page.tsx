@@ -1,51 +1,113 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
 export default function AboutUsPage() {
   return (
-    <section className="py-24 relative lg:px-8 px-4 bg-accent/[0.01] flex lg:flex-row flex-col items-start justify-center lg:gap-16 gap-8 ">
-      <div className="left">
-        <h1 className="tracking-tighter text-balance text-left lg:text-6xl md:text-5xl text-4xl font-extrabold text-foreground">
-          About
-          <br /> <span className="text-accent">TOBC Entertainment</span>
-        </h1>
-        <p className="text-foreground/80 max-w-[560px] text-pretty text-left mt-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora vitae
-          ratione autem delectus consequuntur non quia ea ut exercitationem,
-          quisquam possimus ducimus, cumque ullam necessitatibus minus odit
-          beatae, accusantium laborum laboriosam fuga. Nobis culpa quis
-          perferendis delectus, minima ullam aperiam eligendi doloribus nihil
-          atque at, ex dolores consequuntur dolor vel, cum obcaecati possimus
-          fuga dignissimos similique? Excepturi, maiores perferendis numquam ut
-          reprehenderit incidunt id blanditiis nobis iure, harum praesentium
-          sapiente quisquam deleniti quos velit sunt quidem ex eos commodi rerum
-          eligendi. Explicabo doloribus consectetur quisquam alias quaerat neque
-          hic. Dolorem earum nulla nostrum quisquam reiciendis iure numquam
-          totam natus, consectetur aperiam harum sed mollitia pariatur nisi
-          quas, dolorum quasi dolore tempore, accusantium blanditiis vitae rerum
-          voluptate. Tempore officia hic repellat vel sint blanditiis magni
-          facilis, excepturi quibusdam inventore cupiditate deleniti voluptates
-          libero quisquam nam commodi voluptatibus, placeat velit, nulla
-          perspiciatis expedita dicta aliquid labore. Ratione corrupti nihil,
-          rerum recusandae odio ex architecto fugiat accusantium error quis
-          assumenda accusamus optio velit nesciunt cum saepe quidem alias sint
-          commodi cupiditate qui. Esse suscipit, optio accusantium enim hic
-          libero doloribus? Doloribus tempora eum error similique aspernatur
-          mollitia esse ea voluptate, distinctio asperiores quos maxime
-          sapiente, necessitatibus, eligendi rerum! Id ut amet mollitia minus
-          enim cupiditate excepturi dolor inventore eaque error! Reiciendis nemo
-          labore ipsa magnam nulla facilis cum rem officiis itaque quidem optio
-          excepturi aut ipsam possimus dolore, voluptate aspernatur
-          exercitationem suscipit praesentium facere voluptatibus non totam
-          nostrum fugiat. Aut magni corporis modi dolore neque expedita eligendi
-          quaerat!
-        </p>
-      </div>
-      <img
-        draggable={false}
-        src="https://i.ibb.co/phBB5xk/Screenshot-2024-08-07-133311.png"
-        alt="Influencers"
-        className="rounded-lg sticky top-32 select-none xl:max-w-[430px] lg:max-w-[400px] h-auto"
-        width="1000"
-        height="600"
-      />
-    </section>
+    <div className="container max-w-4xl mx-auto px-4 py-8">
+      <Card className="p-6">
+        <CardHeader>
+          <CardTitle className="md:text-5xl text-4xl font-extrabold tracking-tight mb-4">
+            About Us
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <section className="mb-8">
+            <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-2">
+              About Company
+            </h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Asperiores quia aliquid odit molestias doloremque, labore
+              reiciendis veritatis, mollitia dignissimos praesentium in quis
+              sapiente magni! Dicta officiis reprehenderit, assumenda
+              consectetur aperiam animi asperiores dolor accusantium voluptates
+              quis incidunt enim quas officia quidem inventore? Nostrum neque,
+              voluptates illum cumque soluta corrupti ipsum odio voluptatibus
+              maiores explicabo tempore, ullam eaque totam ex? Voluptatibus
+              blanditiis nihil distinctio nostrum mollitia debitis illum labore
+              unde velit nam fugiat expedita, consequatur, facilis doloremque.
+              Dicta, iure vero soluta illo modi ratione! Dolores eos aut ipsam
+              similique ut, sunt culpa assumenda quam praesentium quod numquam,
+              tempore a aliquam beatae odit minus necessitatibus natus quia,
+              labore odio aspernatur possimus molestiae. Facere quas animi
+              doloremque perferendis maiores autem, corporis maxime officia,
+              veniam asperiores necessitatibus repellat fugiat praesentium minus
+              officiis qui deserunt itaque fuga. Animi, nostrum ea. Ipsa enim
+              dolorem amet cum vero facere ratione incidunt voluptas tempore
+              dolore ex repellat repellendus architecto perspiciatis autem
+              ipsam, officia alias, est ipsum ad. Dolorem eum omnis sequi
+              distinctio ipsa ea, perferendis illo pariatur odio magni nam,
+              repellat eligendi quo excepturi, amet reprehenderit saepe adipisci
+              veritatis officia laudantium dicta eaque iusto quaerat delectus!
+              Iure consequatur saepe tempora consequuntur harum culpa ratione
+              quidem atque nesciunt temporibus.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-2">
+              About Owner/Director
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
+              vero neque saepe, a aperiam, itaque dicta maxime voluptatem porro
+              iste magni ab, maiores ad consequuntur. Doloremque consectetur
+              iste repellendus atque quod cum numquam repudiandae nisi optio et
+              magni possimus aspernatur libero consequuntur autem commodi fugit
+              consequatur, aut quidem unde accusantium! Repudiandae sunt veniam
+              architecto sit quos enim fugiat repellendus aperiam vitae totam
+              porro necessitatibus ratione, impedit perspiciatis, eos odit.
+              Expedita, sequi enim quo, animi perspiciatis illum dolores, illo
+              velit dignissimos odit corrupti incidunt natus! Dolore obcaecati
+              pariatur magni recusandae, nam, repudiandae quibusdam quae,
+              officiis laborum quidem illo facere rem dolorem ex? Ipsum nulla
+              inventore quas numquam natus ipsa ducimus tenetur sed deserunt
+              sequi nostrum ea facilis placeat, distinctio aliquid! Magnam,
+              repellendus! Reprehenderit corrupti tempora vitae, voluptatibus
+              mollitia officia expedita labore ut, consectetur dolorum ratione
+              incidunt dolorem! Atque harum aliquid aliquam tempore consequatur
+              ab nobis voluptatum quas. Labore modi iure, maxime nemo ipsa illum
+              at nam voluptates, odit odio dolor ratione rerum esse repellendus
+              quibusdam! Facere, velit quibusdam. Cumque itaque expedita
+              numquam? Eaque magni enim sed earum consequatur veritatis ex
+              doloribus! Voluptatibus corporis modi impedit consectetur ut
+              accusamus repellendus suscipit laborum. Totam dolores et nulla
+              molestias veritatis nostrum alias dolorum repellat!
+            </p>
+          </section>
+
+          <section>
+            <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-2">
+              About CEO
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
+              vero neque saepe, a aperiam, itaque dicta maxime voluptatem porro
+              iste magni ab, maiores ad consequuntur. Doloremque consectetur
+              iste repellendus atque quod cum numquam repudiandae nisi optio et
+              magni possimus aspernatur libero consequuntur autem commodi fugit
+              consequatur, aut quidem unde accusantium! Repudiandae sunt veniam
+              architecto sit quos enim fugiat repellendus aperiam vitae totam
+              porro necessitatibus ratione, impedit perspiciatis, eos odit.
+              Expedita, sequi enim quo, animi perspiciatis illum dolores, illo
+              velit dignissimos odit corrupti incidunt natus! Dolore obcaecati
+              pariatur magni recusandae, nam, repudiandae quibusdam quae,
+              officiis laborum quidem illo facere rem dolorem ex? Ipsum nulla
+              inventore quas numquam natus ipsa ducimus tenetur sed deserunt
+              sequi nostrum ea facilis placeat, distinctio aliquid! Magnam,
+              repellendus! Reprehenderit corrupti tempora vitae, voluptatibus
+              mollitia officia expedita labore ut, consectetur dolorum ratione
+              incidunt dolorem! Atque harum aliquid aliquam tempore consequatur
+              ab nobis voluptatum quas. Labore modi iure, maxime nemo ipsa illum
+              at nam voluptates, odit odio dolor ratione rerum esse repellendus
+              quibusdam! Facere, velit quibusdam. Cumque itaque expedita
+              numquam? Eaque magni enim sed earum consequatur veritatis ex
+              doloribus! Voluptatibus corporis modi impedit consectetur ut
+              accusamus repellendus suscipit laborum. Totam dolores et nulla
+              molestias veritatis nostrum alias dolorum repellat!
+            </p>
+          </section>
+        </CardContent>
+      </Card>
+    </div>
   )
 }

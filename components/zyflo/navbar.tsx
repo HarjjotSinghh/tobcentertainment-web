@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -275,6 +275,8 @@ export default function ZyfloNavbar({
     logo = logo as ZyfloNavbarLogoImageComponent
   }
 
+  const [open, setOpen] = useState(false)
+
   return (
     <header
       className={cn(
@@ -287,30 +289,12 @@ export default function ZyfloNavbar({
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="flex w-full items-center justify-between space-x-16">
-          {/* Text */}
-          {logoText && !logo && !disableAnimations && (
-            <motion.div
-              variants={zyfloBlurInFromRightVariants as unknown as Variants}
-              initial="initial"
-              custom={0}
-              whileInView="animate"
-              viewport={{ once: true }}
-              className={"w-fit"}
-            >
-              {logoText &&
-                !logo &&
-                React.createElement(headingAs, null, logoText.text)}
-            </motion.div>
-          )}
-          {logoText &&
-            !logo &&
-            disableAnimations &&
-            React.createElement(headingAs, null, logoText.text)}
           {/* Logo */}
           {/* Logo With Animation */}
           {logo && logo.src && !disableAnimations && (
             <AnimatePresence>
-              <motion.div
+              <motion.a
+                href="/"
                 variants={zyfloBlurInFromLeftVariants as unknown as Variants}
                 initial="initial"
                 custom={0}
@@ -327,7 +311,7 @@ export default function ZyfloNavbar({
                   className={imageClassName}
                 />
                 <span className="sr-only">{logo.alt + " logo"}</span>
-              </motion.div>
+              </motion.a>
             </AnimatePresence>
           )}
           {/* Logo Without Animation */}
@@ -345,7 +329,7 @@ export default function ZyfloNavbar({
             </div>
           )}
           {/* Navbar Items */}
-          <nav className="hidden lg:flex">
+          <nav className="hidden">
             <ul className="flex list-none flex-row gap-6">
               {/* Items With Animation */}
               {!disableAnimations &&
@@ -401,8 +385,8 @@ export default function ZyfloNavbar({
         </div>
       </div>
 
-      <ZyfloDrawer direction="top">
-        <ZyfloDrawerTrigger className="block lg:hidden" asChild={true}>
+      <ZyfloDrawer direction="top" open={open}>
+        <ZyfloDrawerTrigger className="block" asChild={true}>
           {!disableAnimations ? (
             // Trigger With Animation
             <motion.div
@@ -415,6 +399,7 @@ export default function ZyfloNavbar({
                 buttonVariants({ variant: "ghost", size: "icon" }),
                 "flex cursor-pointer"
               )}
+              onClick={() => setOpen(!open)}
             >
               <RxHamburgerMenu className="size-5" />
             </motion.div>
@@ -427,7 +412,8 @@ export default function ZyfloNavbar({
           <ZyfloDrawerHeader className="mt-4 !text-left">
             {/* Logo With Animation */}
             {logo && logo.src && !disableAnimations && (
-              <motion.div
+              <motion.a
+                href="/"
                 variants={zyfloBlurInFromLeftVariants as unknown as Variants}
                 initial="initial"
                 custom={0}
@@ -445,7 +431,7 @@ export default function ZyfloNavbar({
                   width={logo.width}
                   height={logo.height}
                 />
-              </motion.div>
+              </motion.a>
             )}
             {/* Logo Without Animation */}
             {logo && logo.src && disableAnimations && (
@@ -529,6 +515,9 @@ export default function ZyfloNavbar({
                         className="inline-flex w-fit items-center gap-2"
                         href={item.href}
                         aria-label={item.label ?? item.title}
+                        onClick={() => {
+                          setOpen(false)
+                        }}
                       >
                         {item.icon && item.icon}
                         {item.title}

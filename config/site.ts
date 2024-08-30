@@ -5,38 +5,16 @@ export const siteConfig = {
   description:
     "Match your brand with the perfect influencer. Find the right influencer for your brand and start building your brand influencer marketing strategy today.",
   mainNav: [
-    {
-      title: "Home",
-      href: "/",
-    },
-    {
-      title: "About Us",
-      href: "/about",
-    },
-    {
-      title: "Production House",
-      href: "/production-house",
-    },
-    {
-      title: "Music",
-      href: "/music",
-    },
-    {
-      title: "Films",
-      href: "/films",
-    },
-    {
-      title: "News",
-      href: "/news",
-    },
-    {
-      title: "Gallery",
-      href: "/gallery",
-    },
-    {
-      title: "Contact Us",
-      href: "/contact-us",
-    },
+    { title: "Home", href: "/" },
+    { title: "About", href: "/about" },
+    { title: "Service", href: "/service" },
+    { title: "Advertisement", href: "/advertisement" },
+    { title: "Films", href: "/films" },
+    { title: "Music", href: "/music" },
+    { title: "Casting", href: "/casting" },
+    { title: "Gallery", href: "/gallery" },
+    { title: "Blog", href: "/blog" },
+    { title: "Contact Us", href: "/contact-us" },
   ],
   links: {
     twitter: "https://x.com/HarjjotSinghh",
