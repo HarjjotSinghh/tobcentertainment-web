@@ -41,13 +41,13 @@ const ZyfloDrawerContent = React.forwardRef<
     <ZyfloDrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-x-0 top-0 z-[999] flex h-auto flex-col rounded-t-[10px] border bg-background",
+        "fixed inset-x-0 top-0 z-[999] flex h-screen flex-col rounded-t-[10px] border bg-background lg:w-1/4 w-1/2 ",
         className
       )}
       {...props}
     >
       {children}
-      <div className="mx-auto mb-4 h-2 w-[150px] rounded-full bg-foreground/10" />
+      {/* <div className="mx-auto mb-4 h-2 w-[150px] rounded-full bg-foreground/10 mt-auto" /> */}
     </ZyfloDrawerPrimitive.Content>
   </ZyfloDrawerPortal>
 ))
@@ -113,5 +113,5 @@ export {
   ZyfloDrawerHeader,
   ZyfloDrawerFooter,
   ZyfloDrawerTitle,
-  ZyfloDrawerDescription
+  ZyfloDrawerDescription,
 }

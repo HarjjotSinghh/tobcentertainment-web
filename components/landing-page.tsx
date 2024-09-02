@@ -806,7 +806,7 @@ export default function LandingPage() {
             className="max-w-3xl mx-auto flex flex-col gap-4 mt-8"
           >
             <AccordionItem
-              className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
               value="item-1"
             >
               <AccordionTrigger className="text-left">
@@ -818,7 +818,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
               value="item-2"
             >
               <AccordionTrigger className="text-left">
@@ -829,7 +829,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
               value="item-3"
             >
               <AccordionTrigger className="text-left">
@@ -840,7 +840,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
               value="item-4"
             >
               <AccordionTrigger className="text-left">
@@ -853,7 +853,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
               value="item-5"
             >
               <AccordionTrigger className="text-left">
@@ -904,7 +904,7 @@ export default function LandingPage() {
 //             className="max-w-3xl mx-auto flex flex-col gap-4 mt-8"
 //           >
 //             <AccordionItem
-//               className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
 //               value="item-1"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -916,7 +916,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
 //               value="item-2"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -927,7 +927,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
 //               value="item-3"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -938,7 +938,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
 //               value="item-4"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -949,7 +949,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-red-50/50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
 //               value="item-5"
 //             >
 //               <AccordionTrigger className="text-left">

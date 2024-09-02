@@ -9,6 +9,7 @@ import {
   zyfloBlurInFromRightVariants,
 } from "@/zyflo.config"
 import { AnimatePresence, Variants, motion } from "framer-motion"
+import { XIcon } from "lucide-react"
 import { RxHamburgerMenu } from "react-icons/rx"
 
 import { cn } from "@/lib/utils"
@@ -385,7 +386,7 @@ export default function ZyfloNavbar({
         </div>
       </div>
 
-      <ZyfloDrawer direction="top" open={open}>
+      <ZyfloDrawer direction="left" open={open}>
         <ZyfloDrawerTrigger className="block" asChild={true}>
           {!disableAnimations ? (
             // Trigger With Animation
@@ -411,6 +412,10 @@ export default function ZyfloNavbar({
         <ZyfloDrawerContent>
           <ZyfloDrawerHeader className="mt-4 !text-left">
             {/* Logo With Animation */}
+            <XIcon
+              className="size-5 absolute top-8 right-8"
+              onClick={() => setOpen(!open)}
+            />
             {logo && logo.src && !disableAnimations && (
               <motion.a
                 href="/"
@@ -419,7 +424,7 @@ export default function ZyfloNavbar({
                 custom={0}
                 whileInView="animate"
                 viewport={{ once: true }}
-                className={`flex items-${
+                className={`flex w-fit items-${
                   mobileNavbarCentred ? "center" : "start"
                 } justify-${mobileNavbarCentred ? "center" : "start"}`}
               >

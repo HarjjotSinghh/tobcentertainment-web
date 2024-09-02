@@ -73,7 +73,7 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.3s ease-in-out",
         "accordion-up": "accordion-up 0.3s ease-in-out",
-        "slide-left": "slide-left 60s linear infinite",
+        "slide-left": "slide-left 30s linear infinite",
       },
     },
   },
