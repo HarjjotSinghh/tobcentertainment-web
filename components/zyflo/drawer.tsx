@@ -41,7 +41,7 @@ const ZyfloDrawerContent = React.forwardRef<
     <ZyfloDrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-x-0 top-0 z-[999] flex h-screen flex-col rounded-t-[10px] border bg-background lg:w-1/4 w-1/2 ",
+        "fixed inset-x-0 top-0 z-[999] flex h-screen flex-col rounded-t-[10px] bg-background lg:w-1/4 w-1/2 ",
         className
       )}
       {...props}

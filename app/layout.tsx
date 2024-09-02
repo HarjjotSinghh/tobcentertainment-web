@@ -49,12 +49,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div className="relative flex min-h-screen flex-col">
               <ZyfloNavbar
                 items={siteConfig.mainNav}
-                logo={{
-                  src: "/logo-wide.png",
-                  alt: "TOBC Entertainment",
-                  width: 300,
-                  height: 100,
-                }}
+                // logo={{
+                //   src: "/logo-wide.png",
+                //   alt: "TOBC Entertainment",
+                //   width: 300,
+                //   height: 100,
+                // }}
               />
               <div className="flex-1">{children}</div>
               <SiteFooter />

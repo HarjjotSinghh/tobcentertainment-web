@@ -409,11 +409,11 @@ export default function ZyfloNavbar({
             <RxHamburgerMenu className="size-5" />
           )}
         </ZyfloDrawerTrigger>
-        <ZyfloDrawerContent>
+        <ZyfloDrawerContent className="bg-accent">
           <ZyfloDrawerHeader className="mt-4 !text-left">
             {/* Logo With Animation */}
             <XIcon
-              className="size-5 absolute top-8 right-8"
+              className="size-8 text-white cursor-pointer"
               onClick={() => setOpen(!open)}
             />
             {logo && logo.src && !disableAnimations && (
@@ -512,7 +512,7 @@ export default function ZyfloNavbar({
                       whileInView="animate"
                       viewport={{ once: true }}
                       key={item.title + " " + (index + 1).toString()}
-                      className={`w-fit text-foreground/80 zyflo-transition hover:text-primary text-${
+                      className={`w-full tracking-widest text-foreground/80 py-2 zyflo-transition text-lg after:w-full after:h-[1px] after:bg-foreground last:after:hidden text-white after:absolute after:bottom-0 after:left-0 uppercase text-${
                         mobileNavbarCentred ? "center" : "left"
                       }`}
                     >
