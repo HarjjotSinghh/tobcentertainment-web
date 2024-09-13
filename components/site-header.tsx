@@ -10,7 +10,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function SiteHeader() {
   return (
-    <header className="flex items-center bg-background/90 backdrop-blur-md justify-between fixed top-0 z-40 w-full border-b-2 px-8 py-4 border-accent/10">
+    <header className="flex items-center bg-background/90 backdrop-blur-md justify-between fixed top-0 z-40 w-full border-b-2 px-8 py-4 border-foreground/10">
       <div className="flex items-center space-x-4">
         <div className="flex justify-center text-accent lg:justify-start">
           <Image

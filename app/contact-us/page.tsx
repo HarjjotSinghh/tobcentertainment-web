@@ -104,7 +104,7 @@ export default function ContactUsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 flex lg:flex-row flex-col gap-8 items-start justify-center">
-      <Card className="max-w-3xl">
+      <Card className="max-w-3xl border-foreground/10">
         <CardHeader>
           <CardTitle className="md:text-5xl text-4xl font-extrabold tracking-tight mb-2">
             Contact Information
@@ -144,7 +144,7 @@ export default function ContactUsPage() {
                 href="https://www.instagram.com/tobcentertainment/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-xl font-bold inline-flex items-center gap-2"
+                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
               >
                 <Instagram className="size-7 mt-0.5" />
                 Instagram
@@ -153,7 +153,7 @@ export default function ContactUsPage() {
                 href="https://in.linkedin.com/company/tobcentertainment"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-xl font-bold inline-flex items-center gap-2"
+                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
               >
                 <Linkedin className="size-7 mt-0.5" />
                 LinkedIn
@@ -162,7 +162,7 @@ export default function ContactUsPage() {
                 href="https://www.facebook.com/TOBCEntertainment/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-xl font-bold inline-flex items-center gap-2"
+                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
               >
                 <Facebook className="size-7 mt-0.5" />
                 Facebook
@@ -171,7 +171,7 @@ export default function ContactUsPage() {
                 href="https://www.twitter.com/CreativesOfTOBC"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-xl font-bold inline-flex items-center gap-2"
+                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
               >
                 <Twitter className="size-7 mt-0.5" />
                 Twitter
@@ -180,7 +180,7 @@ export default function ContactUsPage() {
                 href="https://vimeo.com/tobcentertainment"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-xl font-bold inline-flex items-center gap-2"
+                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
               >
                 <FaVimeoV
                   fill="none"
@@ -193,7 +193,7 @@ export default function ContactUsPage() {
                 href="https://www.youtube.com/@tobcmusic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-xl font-bold inline-flex items-center gap-2"
+                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
               >
                 <Youtube className="size-7 mt-0.5" />
                 YouTube
@@ -202,7 +202,7 @@ export default function ContactUsPage() {
           </div>
         </CardContent>
       </Card>
-      <Card className="max-w-3xl">
+      <Card className="max-w-3xl border-foreground/10">
         <CardHeader>
           <CardTitle className="md:text-5xl text-4xl font-extrabold tracking-tight mb-2">
             Contact Us
@@ -216,106 +216,104 @@ export default function ContactUsPage() {
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <ScrollArea className="max-h-full overflow-y-scroll">
-                <div className="px-1">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input
-                            className="rounded-[8px]"
-                            placeholder="Your Name"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          Please enter your full name.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            className="rounded-[8px]"
-                            placeholder="email@example.com"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          We&apos;ll use this email to contact you.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <FormControl>
-                          <Select
-                            onValueChange={field.onChange}
-                            defaultValue={field.value}
-                          >
-                            <SelectTrigger className="w-full">
-                              <SelectValue placeholder="Select a subject" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="celebrity/influencer marketing">
-                                Celebrity/Influencer Marketing
-                              </SelectItem>
-                              <SelectItem value="advertisements">
-                                Advertisements
-                              </SelectItem>
-                              <SelectItem value="production">
-                                Production
-                              </SelectItem>
-                              <SelectItem value="music">Music</SelectItem>
-                              <SelectItem value="films">Films</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </FormControl>
-                        <FormDescription>
-                          Please select a subject.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            className="rounded-[8px]"
-                            placeholder="Your message..."
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          Please enter your message.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              </ScrollArea>
+              <div className="px-1">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          className="rounded-[8px]"
+                          placeholder="Your Name"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        Please enter your full name.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          className="rounded-[8px]"
+                          placeholder="email@example.com"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        We&apos;ll use this email to contact you.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Subject</FormLabel>
+                      <FormControl>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select a subject" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="celebrity/influencer marketing">
+                              Celebrity/Influencer Marketing
+                            </SelectItem>
+                            <SelectItem value="advertisements">
+                              Advertisements
+                            </SelectItem>
+                            <SelectItem value="production">
+                              Production
+                            </SelectItem>
+                            <SelectItem value="music">Music</SelectItem>
+                            <SelectItem value="films">Films</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormDescription>
+                        Please select a subject.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          className="rounded-[8px]"
+                          placeholder="Your message..."
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        Please enter your message.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <Button
                 type="submit"
                 disabled={isSubmitting}

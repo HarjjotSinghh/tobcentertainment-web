@@ -155,7 +155,8 @@ export default function LandingPage() {
           </Swiper>
         )}
         <h2 className="tracking-tighter text-center lg:text-6xl md:text-5xl text-4xl font-extrabold mt-8">
-          Our <span className="text-primary">Story</span>
+          <span className="font-normal">Our</span>{" "}
+          <span className="text-accent">Story</span>
         </h2>
         <p className="mt-8 text-center text-lg text-foreground max-w-4xl mx-auto">
           At TOBC Entertainment, we specialize in empowering brands to harness
@@ -172,17 +173,21 @@ export default function LandingPage() {
       {/* Perfect influencer and celebrity Section */}
       <section className="flex lg:flex-col flex-col lg:gap-16 gap-12 items-center justify-center  px-8 py-32 pt-32 relativ w-fulle relative overflow-hidden">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="tracking-tighter text-balance text-center lg:text-6xl md:text-5xl text-4xl font-extrabold text-foreground">
-            Match Your <span className="text-accent">Brand</span> With The
-            <br /> Perfect Celebrities and Influencers
+          <h1 className="tracking-tighter text-balance text-center lg:text-6xl md:text-5xl text-4xl font-medium text-foreground">
+            Match Your <span className="text-accent font-extrabold">Brand</span>{" "}
+            With The
+            <br />{" "}
+            <span className="font-extrabold">
+              Perfect Celebrities and Influencers
+            </span>
           </h1>
-          <p className="mt-6 text-foreground/80 max-w-xl mx-auto font-semibold text-center text-lg">
+          <p className="mt-6 text-foreground max-w-xl mx-auto text-center text-lg">
             Amplify your reach, and drive engagement with our influencer and
             celebrity marketing services
           </p>
           <Button
             size={"lg"}
-            className="mt-8 rounded-full bg-[size:300%_300%] bg-[position:0%_0%] hover:bg-[position:100%_100%] transition-all duration-500 ease-in-out object-center bg-gradient-to-r from-accent via-primary to-accent lg:text-2xl text-xl py-10 px-12 bg-primary text-white font-bold shadow-[0px_6px_40px_hsl(var(--accent)/0.5)]"
+            className="mt-8 rounded-full bg-[size:300%_300%] bg-[position:0%_0%] hover:bg-[position:100%_100%] transition-all duration-500 ease-in-out object-center bg-gradient-to-r from-accent via-primary to-accent lg:text-2xl text-xl py-10 px-12 bg-primary text-white font-bold shadow-[0px_6px_40px_hsl(var(--accent)/0.3)]"
           >
             Connect with Us Today!
           </Button>
@@ -199,7 +204,7 @@ export default function LandingPage() {
             marketing, globally.
           </p>
           <section className="py-8">
-            <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)] mix-blend-multiply">
+            <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
               <div className="animate-slide-left group-hover:animation-pause inline-block w-max">
                 {Array.from({ length: 27 }).map((i: any, index: number) => (
                   <Image
@@ -242,25 +247,25 @@ export default function LandingPage() {
             influencers.
           </p>
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-4 mb-16">
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <h3 className="text-center text-5xl font-extrabold">90%</h3>
               <p className="mt-2 text-center text-foreground/80">
                 Engagement Rate
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <h3 className="text-center text-5xl font-extrabold">200%</h3>
               <p className="mt-2 text-center text-foreground/80">
                 Increase In Views
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <h3 className="text-center text-5xl font-extrabold">85%</h3>
               <p className="mt-2 text-center text-foreground/80">
                 Follower Growth
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <h3 className="text-center text-5xl font-extrabold">98%</h3>
               <p className="mt-2 text-center text-foreground/80">Brand Trust</p>
             </div>
@@ -279,7 +284,7 @@ export default function LandingPage() {
             Elevate your brand with industry-leading stratergies.
           </p>
           <div className=" grid grid-cols-1 xl:gap-16 lg:gap-12 md:gap-10 gap-8 mt-16 lg:grid-cols-3  md:grid-cols-2">
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <div className="p-8 shadow-xl mb-8 shadow-accent/[0.08] bg-accent/5 mx-auto rounded-full w-fit">
                 <LucidePersonStanding className="size-10 text-foreground" />
               </div>
@@ -291,7 +296,7 @@ export default function LandingPage() {
                 audience, campaign objectives, and budget constraints.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <div className="p-8 shadow-xl mb-8 shadow-accent/[0.08] bg-accent/5 mx-auto rounded-full w-fit">
                 <VideoIcon className="size-10 text-foreground" />
               </div>
@@ -304,7 +309,7 @@ export default function LandingPage() {
                 target audience.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <div className="p-8 shadow-xl mb-8 shadow-accent/[0.08] bg-accent/5 mx-auto rounded-full w-fit">
                 <UsersIcon className="size-10 text-foreground" />
               </div>
@@ -316,7 +321,7 @@ export default function LandingPage() {
                 communication, content approvals, and performance tracking.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <div className="p-8 shadow-xl mb-8 shadow-accent/[0.08] bg-accent/5 mx-auto rounded-full w-fit">
                 <LightbulbIcon className="size-10 text-foreground" />
               </div>
@@ -329,7 +334,7 @@ export default function LandingPage() {
                 leveraging market insights for maximum impact.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <div className="p-8 shadow-xl mb-8 shadow-accent/[0.08] bg-accent/5 mx-auto rounded-full w-fit">
                 <TrendingUp className="size-10 text-foreground" />
               </div>
@@ -342,7 +347,7 @@ export default function LandingPage() {
                 marketing campaigns.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <div className="p-8 shadow-xl mb-8 shadow-accent/[0.08] bg-accent/5 mx-auto rounded-full w-fit">
                 <DollarSignIcon className="size-10 text-foreground" />
               </div>
@@ -359,7 +364,7 @@ export default function LandingPage() {
           <div className="flex justify-center">
             <Button
               size={"lg"}
-              className="mt-24 rounded-full bg-[size:300%_300%] bg-[position:0%_0%] hover:bg-[position:100%_100%] transition-all duration-500 ease-in-out object-center bg-gradient-to-r from-accent via-primary to-accent lg:text-2xl text-xl py-10 px-12 bg-primary text-white font-bold shadow-[0px_6px_40px_hsl(var(--accent)/0.5)]"
+              className="mt-24 rounded-full bg-[size:300%_300%] bg-[position:0%_0%] hover:bg-[position:100%_100%] transition-all duration-500 ease-in-out object-center bg-gradient-to-r from-accent via-primary to-accent lg:text-2xl text-xl py-10 px-12 bg-primary text-white font-bold shadow-[0px_6px_40px_hsl(var(--accent)/0.3)]"
             >
               Get Started Today!
             </Button>
@@ -428,7 +433,7 @@ export default function LandingPage() {
               </p>
               <Button
                 size={"lg"}
-                className="mt-8 w-full rounded-full bg-[size:300%_300%] bg-[position:0%_0%] hover:bg-[position:100%_100%] transition-all duration-500 ease-in-out object-center bg-gradient-to-r from-accent via-primary to-accent lg:text-2xl text-xl py-10 px-12 bg-primary text-white font-bold shadow-[0px_6px_40px_hsl(var(--accent)/0.5)]"
+                className="mt-8 w-full rounded-full bg-[size:300%_300%] bg-[position:0%_0%] hover:bg-[position:100%_100%] transition-all duration-500 ease-in-out object-center bg-gradient-to-r from-accent via-primary to-accent lg:text-2xl text-xl py-10 px-12 bg-primary text-white font-bold shadow-[0px_6px_40px_hsl(var(--accent)/0.3)]"
               >
                 Contact Us!
               </Button>
@@ -458,7 +463,7 @@ export default function LandingPage() {
             to finish.
           </p>
           <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-3">
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <img
                 draggable={false}
                 src="https://growth.chingari.io/wp-content/uploads/2024/06/Campaign-Overview.png"
@@ -474,7 +479,7 @@ export default function LandingPage() {
                 Share campaign details for a tailored and effective strategy.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <img
                 draggable={false}
                 src="https://growth.chingari.io/wp-content/uploads/2024/06/Deliverables-Determination.png"
@@ -491,7 +496,7 @@ export default function LandingPage() {
                 celebrity campaign.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <img
                 draggable={false}
                 src="https://growth.chingari.io/wp-content/uploads/2023/08/Budget-Allocation.png"
@@ -507,7 +512,7 @@ export default function LandingPage() {
                 Decide your budget and get the desired result.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <img
                 draggable={false}
                 src="https://growth.chingari.io/wp-content/uploads/2024/06/List-Presentation.png"
@@ -523,7 +528,7 @@ export default function LandingPage() {
                 Get ideal influencers for your brand in less than 48 hours.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <img
                 draggable={false}
                 src="https://growth.chingari.io/wp-content/uploads/2024/06/Quotation-Process.png"
@@ -540,7 +545,7 @@ export default function LandingPage() {
                 compliance.
               </p>
             </div>
-            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+            <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
               <img
                 draggable={false}
                 src="https://growth.chingari.io/wp-content/uploads/2024/06/Finalization.png"
@@ -606,7 +611,7 @@ export default function LandingPage() {
             >
               {/* {console.log(screenSize)} */}
               <SwiperSlide className="overflow-visible">
-                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
                   <div className="grid gap-3 lg:gap-5">
                     <p className="text-lg lg:text-xl">
                       &ldquo;I was amazed by the quality of service. The team
@@ -636,7 +641,7 @@ export default function LandingPage() {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="overflow-visible">
-                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
                   <div className="grid gap-3 lg:gap-5">
                     <p className="text-lg lg:text-xl">
                       &ldquo;The level of expertise and attention to detail
@@ -666,7 +671,7 @@ export default function LandingPage() {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="overflow-visible">
-                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
                   <div className="grid gap-3 lg:gap-5">
                     <p className="text-lg lg:text-xl">
                       &ldquo;The support team was incredibly helpful and
@@ -696,7 +701,7 @@ export default function LandingPage() {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="overflow-visible">
-                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
                   <div className="grid gap-3 lg:gap-5">
                     <p className="text-lg lg:text-xl">
                       &ldquo;I was amazed by the quality of service. The team
@@ -726,7 +731,7 @@ export default function LandingPage() {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="overflow-visible">
-                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
                   <div className="grid gap-3 lg:gap-5">
                     <p className="text-lg lg:text-xl">
                       &ldquo;The level of expertise and attention to detail
@@ -756,7 +761,7 @@ export default function LandingPage() {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="overflow-visible">
-                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-secondary border-2">
+                <div className="rounded-xl  backdrop-blur-md md:p-8 p-6 border-foreground/10 border-2">
                   <div className="grid gap-3 lg:gap-5">
                     <p className="text-lg lg:text-xl">
                       &ldquo;The support team was incredibly helpful and
@@ -806,7 +811,7 @@ export default function LandingPage() {
             className="max-w-3xl mx-auto flex flex-col gap-4 mt-8"
           >
             <AccordionItem
-              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
               value="item-1"
             >
               <AccordionTrigger className="text-left">
@@ -818,7 +823,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
               value="item-2"
             >
               <AccordionTrigger className="text-left">
@@ -829,7 +834,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
               value="item-3"
             >
               <AccordionTrigger className="text-left">
@@ -840,7 +845,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
               value="item-4"
             >
               <AccordionTrigger className="text-left">
@@ -853,7 +858,7 @@ export default function LandingPage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+              className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
               value="item-5"
             >
               <AccordionTrigger className="text-left">
@@ -879,7 +884,7 @@ export default function LandingPage() {
           <Button
             variant={"secondary"}
             size={"lg"}
-            className="mt-8 text-xl bg-background hover:bg-background/95 text-accent rounded-full h-14 px-10"
+            className="mt-8 text-xl bg-foreground hover:bg-foreground/95 rounded-full h-14 px-10 text-background"
           >
             Get In Touch
           </Button>
@@ -904,7 +909,7 @@ export default function LandingPage() {
 //             className="max-w-3xl mx-auto flex flex-col gap-4 mt-8"
 //           >
 //             <AccordionItem
-//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
 //               value="item-1"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -916,7 +921,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
 //               value="item-2"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -927,7 +932,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
 //               value="item-3"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -938,7 +943,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
 //               value="item-4"
 //             >
 //               <AccordionTrigger className="text-left">
@@ -949,7 +954,7 @@ export default function LandingPage() {
 //               </AccordionContent>
 //             </AccordionItem>
 //             <AccordionItem
-//               className="bg-slate-50 backdrop-blur-sm shadow-lg shadow-black/[0.02] rounded-xl py-2 px-8"
+//               className=" backdrop-blur-sm shadow-lg shadow-foreground/[0.02] rounded-xl py-2 px-8"
 //               value="item-5"
 //             >
 //               <AccordionTrigger className="text-left">

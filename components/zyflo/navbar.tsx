@@ -283,7 +283,7 @@ export default function ZyfloNavbar({
       className={cn(
         `${
           sticky ? "sticky top-0" : "relative"
-        } z-50 flex items-center justify-${justify} border-b border-b-muted bg-background/90 px-4 py-5 backdrop-blur lg:px-8`,
+        } z-50 flex items-center justify-${justify} border-b border-b-foreground/10 bg-background/90 px-4 py-5 backdrop-blur lg:px-8`,
         className
       )}
       {...props}

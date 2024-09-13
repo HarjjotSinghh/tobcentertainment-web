@@ -1,111 +1,97 @@
+import Image from "next/image"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function AboutUsPage() {
   return (
-    <div className="container max-w-4xl mx-auto px-4 py-8">
-      <Card className="p-6">
-        <CardHeader>
-          <CardTitle className="md:text-5xl text-4xl font-extrabold tracking-tight mb-4">
-            About Us
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <section className="mb-8">
-            <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-2">
-              About Company
-            </h2>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Asperiores quia aliquid odit molestias doloremque, labore
-              reiciendis veritatis, mollitia dignissimos praesentium in quis
-              sapiente magni! Dicta officiis reprehenderit, assumenda
-              consectetur aperiam animi asperiores dolor accusantium voluptates
-              quis incidunt enim quas officia quidem inventore? Nostrum neque,
-              voluptates illum cumque soluta corrupti ipsum odio voluptatibus
-              maiores explicabo tempore, ullam eaque totam ex? Voluptatibus
-              blanditiis nihil distinctio nostrum mollitia debitis illum labore
-              unde velit nam fugiat expedita, consequatur, facilis doloremque.
-              Dicta, iure vero soluta illo modi ratione! Dolores eos aut ipsam
-              similique ut, sunt culpa assumenda quam praesentium quod numquam,
-              tempore a aliquam beatae odit minus necessitatibus natus quia,
-              labore odio aspernatur possimus molestiae. Facere quas animi
-              doloremque perferendis maiores autem, corporis maxime officia,
-              veniam asperiores necessitatibus repellat fugiat praesentium minus
-              officiis qui deserunt itaque fuga. Animi, nostrum ea. Ipsa enim
-              dolorem amet cum vero facere ratione incidunt voluptas tempore
-              dolore ex repellat repellendus architecto perspiciatis autem
-              ipsam, officia alias, est ipsum ad. Dolorem eum omnis sequi
-              distinctio ipsa ea, perferendis illo pariatur odio magni nam,
-              repellat eligendi quo excepturi, amet reprehenderit saepe adipisci
-              veritatis officia laudantium dicta eaque iusto quaerat delectus!
-              Iure consequatur saepe tempora consequuntur harum culpa ratione
-              quidem atque nesciunt temporibus.
-            </p>
-          </section>
+    <div className="container max-w-6xl mx-auto px-4 py-24">
+      <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8 text-center">
+        About Us
+      </h1>
 
-          <section className="mb-8">
-            <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-2">
-              About Owner/Director
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
-              vero neque saepe, a aperiam, itaque dicta maxime voluptatem porro
-              iste magni ab, maiores ad consequuntur. Doloremque consectetur
-              iste repellendus atque quod cum numquam repudiandae nisi optio et
-              magni possimus aspernatur libero consequuntur autem commodi fugit
-              consequatur, aut quidem unde accusantium! Repudiandae sunt veniam
-              architecto sit quos enim fugiat repellendus aperiam vitae totam
-              porro necessitatibus ratione, impedit perspiciatis, eos odit.
-              Expedita, sequi enim quo, animi perspiciatis illum dolores, illo
-              velit dignissimos odit corrupti incidunt natus! Dolore obcaecati
-              pariatur magni recusandae, nam, repudiandae quibusdam quae,
-              officiis laborum quidem illo facere rem dolorem ex? Ipsum nulla
-              inventore quas numquam natus ipsa ducimus tenetur sed deserunt
-              sequi nostrum ea facilis placeat, distinctio aliquid! Magnam,
-              repellendus! Reprehenderit corrupti tempora vitae, voluptatibus
-              mollitia officia expedita labore ut, consectetur dolorum ratione
-              incidunt dolorem! Atque harum aliquid aliquam tempore consequatur
-              ab nobis voluptatum quas. Labore modi iure, maxime nemo ipsa illum
-              at nam voluptates, odit odio dolor ratione rerum esse repellendus
-              quibusdam! Facere, velit quibusdam. Cumque itaque expedita
-              numquam? Eaque magni enim sed earum consequatur veritatis ex
-              doloribus! Voluptatibus corporis modi impedit consectetur ut
-              accusamus repellendus suscipit laborum. Totam dolores et nulla
-              molestias veritatis nostrum alias dolorum repellat!
-            </p>
-          </section>
+      <Card className="mb-16 border-foreground/10 rounded-2xl lg:p-8 p-6">
+        <CardContent className="p-6">
+          <div className="flex flex-col md:flex-row lg:gap-8 gap-6">
+            <div className="flex-1">
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-4">
+                About The Company
+              </h2>
+              <p className="mb-4">
+                Born in the heart of India&apos;s entertainment capital, Mumbai,
+                TOBC Entertainment is a production house founded in 2023 by
+                visionary filmmaker Shivam Singh. From the outset, TOBC
+                Entertainment set out with a mission to break boundaries and
+                redefine the art of filmmaking across Pan India.
+              </p>
+              <p className="mb-4">
+                Beyond its focus on filmmaking, TOBC Entertainment is a creative
+                powerhouse where fresh ideas come to life. Specializing in a
+                diverse range of projects—from interesting advertisements to
+                captivating songs and meaningful feature films—each project is
+                meticulously crafted with an emphasis on originality, quality,
+                and impact, ensuring that every piece resonates deeply with its
+                audience.
+              </p>
+              <p>
+                With a talented team and a bold vision for the future, TOBC
+                Entertainment is poised to leave a lasting mark on the
+                entertainment industry, both in India and beyond. Whether
+                producing compelling content, managing star talent, or launching
+                groundbreaking campaigns, TOBC Entertainment is dedicated to
+                delivering work that entertains, inspires, and makes a
+                difference.
+              </p>
+            </div>
+            <div className="md:w-1/3">
+              <Image
+                src="/logo.jpg"
+                alt="TOBC Entertainment"
+                width={400}
+                height={300}
+                className="rounded-xl object-cover"
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
-          <section>
-            <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-2">
-              About CEO
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
-              vero neque saepe, a aperiam, itaque dicta maxime voluptatem porro
-              iste magni ab, maiores ad consequuntur. Doloremque consectetur
-              iste repellendus atque quod cum numquam repudiandae nisi optio et
-              magni possimus aspernatur libero consequuntur autem commodi fugit
-              consequatur, aut quidem unde accusantium! Repudiandae sunt veniam
-              architecto sit quos enim fugiat repellendus aperiam vitae totam
-              porro necessitatibus ratione, impedit perspiciatis, eos odit.
-              Expedita, sequi enim quo, animi perspiciatis illum dolores, illo
-              velit dignissimos odit corrupti incidunt natus! Dolore obcaecati
-              pariatur magni recusandae, nam, repudiandae quibusdam quae,
-              officiis laborum quidem illo facere rem dolorem ex? Ipsum nulla
-              inventore quas numquam natus ipsa ducimus tenetur sed deserunt
-              sequi nostrum ea facilis placeat, distinctio aliquid! Magnam,
-              repellendus! Reprehenderit corrupti tempora vitae, voluptatibus
-              mollitia officia expedita labore ut, consectetur dolorum ratione
-              incidunt dolorem! Atque harum aliquid aliquam tempore consequatur
-              ab nobis voluptatum quas. Labore modi iure, maxime nemo ipsa illum
-              at nam voluptates, odit odio dolor ratione rerum esse repellendus
-              quibusdam! Facere, velit quibusdam. Cumque itaque expedita
-              numquam? Eaque magni enim sed earum consequatur veritatis ex
-              doloribus! Voluptatibus corporis modi impedit consectetur ut
-              accusamus repellendus suscipit laborum. Totam dolores et nulla
-              molestias veritatis nostrum alias dolorum repellat!
-            </p>
-          </section>
+      <Card className="border-foreground/10 rounded-2xl lg:p-8 p-6">
+        <CardContent className="p-6">
+          <div className="flex flex-col md:flex-row-reverse lg:gap-8 gap-6">
+            <div className="flex-1">
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-4">
+                About The Director
+              </h2>
+              <p className="mb-4">
+                Shivam Singh is a film producer who founded TOBC Entertainment
+                in 2023 to empower and promote new ideas and talent in the
+                entertainment industry while exploring his own style of
+                filmmaking.
+              </p>
+              <p className="mb-4">
+                At TOBC Entertainment, Shivam is committed to discovering and
+                collaborating on entertainment opportunities with some of the
+                giants in Bollywood, such as Zee Music, Sa Re Ga Ma, and Times
+                Music. He nurtures emerging artists, collaborates with
+                celebrities and casting directors, and has delivered several
+                promising and entertaining songs.
+              </p>
+              <p>
+                Shivam Singh is synonymous with prestige, elegance, versatility,
+                and success. He is open to collaborating with companies that
+                have high values and a strong creative ethos.
+              </p>
+            </div>
+            <div className="md:w-1/3">
+              <Image
+                src="/logo.jpg"
+                alt="Shivam Singh"
+                width={400}
+                height={300}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>

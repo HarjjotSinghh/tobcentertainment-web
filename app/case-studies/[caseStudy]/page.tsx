@@ -73,7 +73,7 @@ export default function CaseStudy({
               ))}
             </ul>
           </section>
-          <section className="bg-gray-50 border-2 border-muted p-6 rounded-lg">
+          <section className="bg-card border-2 border-foreground/10 p-6 rounded-lg">
             <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-4">
               Testimonial
             </h2>
