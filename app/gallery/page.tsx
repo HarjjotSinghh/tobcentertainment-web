@@ -2,9 +2,13 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { shuffle } from "lodash"
 import { FaHeart, FaShareAlt } from "react-icons/fa"
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+
+import useMasonry from "@/components/utils/useMasonry"
+
+const shuffle = (array: string[]) => {
+  return array.sort(() => Math.random() - 0.5)
+}
 
 const images = [
   "https://picsum.photos/id/424/2048/1536",
@@ -60,46 +64,49 @@ const images = [
 ]
 
 export default function GalleryPage() {
+  const masonryContainer = useMasonry()
+
   return (
     <div className="container mx-auto px-4 pt-16 pb-32 relative">
-      <h1 className="md:text-5xl text-4xl text-center font-extrabold tracking-normal mb-8">
+      <h1 className="md:text-5xl text-4xl text-center font-extrabold tracking-normal mb-8 uppercase">
         Gallery
       </h1>
-      <ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 750: 2, 1280: 3 }}>
-        <Masonry gutter="32px">
-          {shuffle(images).map((image: string, index: number) => (
-            <motion.div
-              key={index}
-              className="relative group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src={image}
-                alt={`Gallery image ${index + 1}`}
-                className="w-full object-cover rounded-lg transition-transform duration-300 transform group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-all transform group-hover:scale-105 duration-300 flex flex-col justify-end">
-                <div className="p-4 text-white text-center">
-                  <h2 className="text-lg font-semibold">
-                    Image Title {index + 1}
-                  </h2>
-                </div>
-                <div className="flex items-center justify-center mb-4">
-                  <button className="bg-white p-2 rounded-full shadow-lg mx-2 hover:bg-gray-200">
-                    <FaHeart className="text-red-500" />
-                  </button>
-                  <button className="bg-white p-2 rounded-full shadow-lg mx-2 hover:bg-gray-200">
-                    <FaShareAlt className="text-blue-500" />
-                  </button>
-                </div>
+      <div
+        ref={masonryContainer}
+        className="grid items-start gap-6 sm:grid-cols-3 md:gap-8"
+      >
+        {shuffle(images).map((image: string, index: number) => (
+          <motion.div
+            key={index}
+            className="relative group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src={image}
+              alt={`Gallery image ${index + 1}`}
+              className="w-full object-cover rounded-lg transition-transform duration-300 transform group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-all transform group-hover:scale-105 duration-300 flex flex-col justify-end">
+              <div className="p-4 text-white text-center">
+                <h2 className="text-lg font-semibold">
+                  Image Title {index + 1}
+                </h2>
               </div>
-            </motion.div>
-          ))}
-        </Masonry>
-      </ResponsiveMasonry>
+              <div className="flex items-center justify-center mb-4">
+                <button className="bg-white p-2 rounded-full shadow-lg mx-2 hover:bg-gray-200">
+                  <FaHeart className="text-red-500" />
+                </button>
+                <button className="bg-white p-2 rounded-full shadow-lg mx-2 hover:bg-gray-200">
+                  <FaShareAlt className="text-blue-500" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
       <div className="fixed bottom-4 right-4 flex space-x-4">
         <button className="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300">
           <FaHeart />
