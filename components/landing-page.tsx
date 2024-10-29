@@ -25,12 +25,10 @@ import { AnimatePresence, motion, useInView } from "framer-motion"
 
 import { caseStudies, celebreties } from "@/config/site"
 import { cn } from "@/lib/utils"
-import {
-  AdvertisementContent,
-  FilmsContent,
-  MusicContent,
-  tabs,
-} from "@/app/work/page"
+import AdvertisementContent from "@/app/work/ads-content"
+import FilmsContent from "@/app/work/films-content"
+import MusicContent from "@/app/work/music-content"
+import { tabs } from "@/app/work/tabs"
 
 import {
   Accordion,
