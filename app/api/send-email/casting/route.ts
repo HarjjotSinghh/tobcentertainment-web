@@ -13,32 +13,73 @@ export async function POST(req: Request) {
             host: "api.eu.mailgun.net"
         });
 
-        const { name, email, phone, age, gender, experience, portfolio } = await req.json();
+        const {
+            name,
+            age,
+            height,
+            nativePlace,
+            currentLocation,
+            introductionLinks,
+            photos,
+            auditionLinks,
+            workLinks,
+            instagramLink,
+            extraActivities
+        } = await req.json();
 
         const response = await new Promise<any>((resolve, reject) => {
             mg.messages().send(
                 {
-                    from: `${name} <${process.env.SMTP_USER}>`,
+                    from: `Casting Application <${process.env.SMTP_USER}>`,
                     to: process.env.TO_EMAIL!,
                     subject: "New Casting Application",
                     text: `
                         Name: ${name}
-                        Email: ${email}
-                        Phone: ${phone}
                         Age: ${age}
-                        Gender: ${gender}
-                        Experience: ${experience}
-                        Portfolio: ${portfolio || 'Not provided'}
+                        Height: ${height}
+                        Native Place: ${nativePlace}
+                        Current Location: ${currentLocation}
+                        Introduction Links: ${introductionLinks.join(', ')}
+                        Photos: ${photos.map((p: any) => p.url).join(', ')}
+                        Audition Links: ${auditionLinks.join(', ')}
+                        Work Links: ${workLinks.join(', ')}
+                        Instagram: ${instagramLink || 'Not provided'}
+                        Extra Activities: ${extraActivities.join(', ')}
                     `,
                     html: `
                         <h2>New Casting Application</h2>
                         <p><strong>Name:</strong> ${name}</p>
-                        <p><strong>Email:</strong> ${email}</p>
-                        <p><strong>Phone:</strong> ${phone}</p>
                         <p><strong>Age:</strong> ${age}</p>
-                        <p><strong>Gender:</strong> ${gender}</p>
-                        <p><strong>Experience:</strong><br>${experience}</p>
-                        <p><strong>Portfolio:</strong> ${portfolio || 'Not provided'}</p>
+                        <p><strong>Height:</strong> ${height}</p>
+                        <p><strong>Native Place:</strong> ${nativePlace}</p>
+                        <p><strong>Current Location:</strong> ${currentLocation}</p>
+                        
+                        <p><strong>Introduction Links:</strong></p>
+                        <ul>
+                            ${introductionLinks.map((link: string) => `<li><a href="${link}">${link}</a></li>`).join('')}
+                        </ul>
+                        
+                        <p><strong>Photos:</strong></p>
+                        <ul>
+                            ${photos.map((photo: any) => `<li><a href="${photo.url}">${photo.name}</a></li>`).join('')}
+                        </ul>
+                        
+                        <p><strong>Audition Links:</strong></p>
+                        <ul>
+                            ${auditionLinks.map((link: string) => `<li><a href="${link}">${link}</a></li>`).join('')}
+                        </ul>
+                        
+                        <p><strong>Work Links:</strong></p>
+                        <ul>
+                            ${workLinks.map((link: string) => `<li><a href="${link}">${link}</a></li>`).join('')}
+                        </ul>
+                        
+                        ${instagramLink ? `<p><strong>Instagram:</strong> <a href="${instagramLink}">${instagramLink}</a></p>` : ''}
+                        
+                        <p><strong>Extra Activities:</strong></p>
+                        <ul>
+                            ${extraActivities.map((activity: string) => `<li>${activity}</li>`).join('')}
+                        </ul>
                     `
                 },
                 (error, body) => {

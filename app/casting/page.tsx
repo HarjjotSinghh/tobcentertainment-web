@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
+import { UploadButton } from "@/utils/uploadthing"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { CheckCircle, LoaderIcon, Plus, X } from "lucide-react"
 import { useForm } from "react-hook-form"
@@ -38,9 +40,14 @@ const formSchema = z.object({
   introductionLinks: z.array(z.string().url()).max(4).min(1, {
     message: "Please enter at least 1 introduction link.",
   }),
-  photos: z.array(z.string().url()).max(4).min(1, {
-    message: "Please enter at least 1 photo link.",
-  }),
+  photos: z
+    .array(
+      z.object({
+        url: z.string().url(),
+        name: z.string(),
+      })
+    )
+    .max(4),
   auditionLinks: z.array(z.string().url()).max(2).min(1, {
     message: "Please enter at least 1 audition link.",
   }),
@@ -58,10 +65,10 @@ type FormValues = z.infer<typeof formSchema>
 export default function CastingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [introductionLinks, setIntroductionLinks] = useState([""])
-  const [photos, setPhotos] = useState([""])
+  const [photos, setPhotos] = useState<{ url: string; name: string }[]>([])
   const [auditionLinks, setAuditionLinks] = useState([""])
   const [workLinks, setWorkLinks] = useState([""])
-
+  console.log(photos)
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -71,7 +78,7 @@ export default function CastingPage() {
       nativePlace: "",
       currentLocation: "",
       introductionLinks: [""],
-      photos: [""],
+      photos: [],
       auditionLinks: [""],
       workLinks: [""],
       instagramLink: "",
@@ -111,6 +118,13 @@ export default function CastingPage() {
         photos,
         auditionLinks,
         workLinks,
+        instagramLink: data.instagramLink,
+        extraActivities: data.extraActivities,
+        name: data.name,
+        age: data.age,
+        height: data.height,
+        nativePlace: data.nativePlace,
+        currentLocation: data.currentLocation,
       }
 
       const response = await fetch("/api/send-email/casting", {
@@ -141,7 +155,7 @@ export default function CastingPage() {
       setIsSubmitting(false)
       form.reset()
       setIntroductionLinks([""])
-      setPhotos([""])
+      setPhotos([])
       setAuditionLinks([""])
       setWorkLinks([""])
     }
@@ -151,7 +165,7 @@ export default function CastingPage() {
     <div className="container mx-auto px-4 py-8">
       <Card className="max-w-2xl mx-auto border-foreground/10">
         <CardHeader>
-          <CardTitle className="text-4xl font-extrabold tracking-tight">
+          <CardTitle className="text-4xl font-extrabold tracking-normal">
             Casting Application
           </CardTitle>
         </CardHeader>
@@ -271,35 +285,60 @@ export default function CastingPage() {
 
                 <FormItem>
                   <FormLabel>Photos</FormLabel>
-                  {photos.map((photo, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <Input
-                        placeholder="Photo URL"
-                        value={photo}
-                        onChange={(e) =>
-                          updateField(setPhotos, index, e.target.value)
+                  <div className="space-y-4">
+                    <UploadButton
+                      endpoint="imageUploader"
+                      onClientUploadComplete={(res: any) => {
+                        if (res) {
+                          const newPhotos = res.map((file: any) => ({
+                            url: file.url,
+                            name: file.name,
+                          }))
+                          setPhotos((prev) =>
+                            [...prev, ...newPhotos].slice(0, 4)
+                          )
                         }
-                      />
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => removeField(setPhotos, index)}
-                      >
-                        <X className="size-4" />
-                      </Button>
+                      }}
+                      onUploadError={(error: Error) => {
+                        toast.error("Failed to upload photo", {
+                          description: error.message,
+                          icon: <RiErrorWarningLine className="size-6" />,
+                        })
+                      }}
+                    />
+
+                    <div className="grid grid-cols-2 gap-4">
+                      {photos.map((photo, index) => (
+                        <div key={index} className="relative group">
+                          <div className="relative aspect-square">
+                            <Image
+                              src={photo.url}
+                              alt={photo.name}
+                              fill
+                              className="object-cover rounded-lg"
+                            />
+                          </div>
+                          <Button
+                            type="button"
+                            variant="destructive"
+                            size="icon"
+                            className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                            onClick={() =>
+                              setPhotos((prev) =>
+                                prev.filter((_, i) => i !== index)
+                              )
+                            }
+                          >
+                            <X className="size-4" />
+                          </Button>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                  {photos.length < 4 && (
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="mt-2"
-                      onClick={() => addField(setPhotos, 4)}
-                    >
-                      <Plus className="size-4 mr-2" /> Add Photo
-                    </Button>
+                  </div>
+                  {form.formState.errors.photos && (
+                    <FormMessage>
+                      {form.formState.errors.photos.message}
+                    </FormMessage>
                   )}
                 </FormItem>
 
@@ -439,8 +478,17 @@ export default function CastingPage() {
               </div>
               <Button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full text-lg font-bold tracking-tight inline-flex items-center group"
+                onClick={() => {
+                  onSubmit(form.getValues())
+                }}
+                disabled={
+                  isSubmitting ||
+                  auditionLinks.some((link) => link === "") ||
+                  photos.length < 1 ||
+                  workLinks.some((link) => link === "") ||
+                  introductionLinks.some((link) => link === "")
+                }
+                className="w-full text-lg font-bold tracking-normal inline-flex items-center group"
               >
                 {isSubmitting ? "Submitting..." : "Submit Application"}{" "}
                 {isSubmitting ? (

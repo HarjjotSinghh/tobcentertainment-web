@@ -6,7 +6,7 @@ import { blogPosts } from "@/config/site"
 export default function BlogPage() {
   return (
     <div className="container mx-auto lg:px-8 px-4 py-16 pb-32">
-      <h1 className="md:text-5xl text-4xl text-center font-extrabold tracking-tight mb-8">
+      <h1 className="md:text-5xl text-4xl text-center font-extrabold tracking-normal mb-8">
         All Blog Posts
       </h1>
       <div className="grid h-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">

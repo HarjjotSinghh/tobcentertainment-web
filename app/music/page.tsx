@@ -3,7 +3,7 @@ export default function MusicPage() {
     <main>
       <section className="py-24 relative lg:px-8 px-4 bg-accent/[0.01] flex lg:flex-row flex-col items-start justify-start lg:gap-16 gap-8 max-w-7xl mx-auto">
         <div className="left">
-          <h1 className="tracking-tighter text-pretty text-left lg:text-6xl md:text-5xl text-4xl font-extrabold text-foreground">
+          <h1 className="tracking-normal text-pretty text-left lg:text-6xl md:text-5xl text-4xl font-extrabold text-foreground">
             Music
             <br /> <span className="text-accent">TOBC Entertainment</span>
           </h1>
@@ -30,7 +30,7 @@ export default function MusicPage() {
       <section className="py-24 relative flex items-start justify-start bg-accent/[0.03] ">
         <div className="left w-full lg:px-8 px-4  max-w-7xl mx-auto flex flex-col items-start justify-start lg:gap-16 gap-8">
           <div>
-            <h1 className="tracking-tighter text-pretty text-left lg:text-6xl md:text-5xl text-4xl font-extrabold text-foreground">
+            <h1 className="tracking-normal text-pretty text-left lg:text-6xl md:text-5xl text-4xl font-extrabold text-foreground">
               Hindi <span className="text-accent">Record Label</span>
             </h1>
             <p className="mt-4 text-left text-lg text-foreground/80 max-w-[540px] ">

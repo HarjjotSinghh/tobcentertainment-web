@@ -82,7 +82,7 @@ const ZyfloDrawerTitle = React.forwardRef<
   <ZyfloDrawerPrimitive.Title
     ref={ref}
     className={cn(
-      "text-lg font-semibold leading-none tracking-tight",
+      "text-lg font-semibold leading-none tracking-normal",
       className
     )}
     {...props}

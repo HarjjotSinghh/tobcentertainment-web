@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {
@@ -37,14 +38,6 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 
 const formSchema = z.object({
@@ -103,233 +96,126 @@ export default function ContactUsPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 flex lg:flex-row flex-col gap-8 items-start justify-center">
-      <Card className="max-w-3xl border-foreground/10">
-        <CardHeader>
-          <CardTitle className="md:text-5xl text-4xl font-extrabold tracking-tight mb-2">
-            Contact Information
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div>
-            <div className="space-y-1.5 text-lg">
-              <p>
-                Address: Flat No. 12, Khodaram Building, Mumbai, Maharastra
-                401501
-              </p>
-              <p>GST Number: 27AAKCT3388B1Z6</p>
-              <p>
-                Contact:{" "}
-                <Link className="underline" href="tel:+918077552630">
-                  +91 8077552630
-                </Link>
-              </p>
-              <p>
-                E-Mail:{" "}
-                <Link
-                  className="underline"
-                  href="mailto:tobcentertainment@gmail.com"
-                >
-                  tobcentertainment@gmail.com
-                </Link>
-              </p>
-            </div>
-          </div>
-          <div className="mt-8">
-            <h2 className="md:text-3xl text-2xl font-extrabold tracking-tight mb-2">
-              Follow Us
-            </h2>
-            <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 !mt-6">
-              <a
-                href="https://www.instagram.com/tobcentertainment/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
-              >
-                <Instagram className="size-7 mt-0.5" />
-                Instagram
-              </a>
-              <a
-                href="https://in.linkedin.com/company/tobcentertainment"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
-              >
-                <Linkedin className="size-7 mt-0.5" />
-                LinkedIn
-              </a>
-              <a
-                href="https://www.facebook.com/TOBCEntertainment/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
-              >
-                <Facebook className="size-7 mt-0.5" />
-                Facebook
-              </a>
-              <a
-                href="https://www.twitter.com/CreativesOfTOBC"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
-              >
-                <Twitter className="size-7 mt-0.5" />
-                Twitter
-              </a>
-              <a
-                href="https://vimeo.com/tobcentertainment"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
-              >
-                <FaVimeoV
-                  fill="none"
-                  strokeWidth={40}
-                  className="size-7 mt-0.5"
-                />
-                Vimeo
-              </a>
-              <a
-                href="https://www.youtube.com/@tobcmusic"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground text-xl font-bold inline-flex items-center gap-2"
-              >
-                <Youtube className="size-7 mt-0.5" />
-                YouTube
-              </a>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-      <Card className="max-w-3xl border-foreground/10">
-        <CardHeader>
-          <CardTitle className="md:text-5xl text-4xl font-extrabold tracking-tight mb-2">
-            Contact Us
-          </CardTitle>
-          <CardDescription className="text-base text-pretty">
-            Get in touch with our team to discuss your requirements. Please fill
-            and submit the form below and we will get back to you as soon as
-            possible.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+    <div className="flex flex-col">
+      <main className="flex-grow">
+        <div className="relative sm:h-96 h-72 flex items-center justify-center overflow-hidden">
+          <Image
+            src="/contact.jpg"
+            alt="Contact Us"
+            width={1920}
+            height={1080}
+            className="object-cover size-full absolute inset-0 -z-[1] object-center brightness-75"
+          />
+          <h1 className="text-foreground lg:text-5xl md:text-4xl text-3xl font-bold uppercase">
+            Contact US
+          </h1>
+        </div>
+
+        <div className="container mx-auto py-12">
+          <h2 className="text-3xl font-bold text-center mb-8">Get in touch!</h2>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <div className="px-1">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <FormControl>
-                        <Input
-                          className="rounded-[8px]"
-                          placeholder="Your Name"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormDescription>
-                        Please enter your full name.
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          className="rounded-[8px]"
-                          placeholder="email@example.com"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormDescription>
-                        We&apos;ll use this email to contact you.
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <FormControl>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <SelectTrigger className="w-full">
-                            <SelectValue placeholder="Select a subject" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="celebrity/influencer marketing">
-                              Celebrity/Influencer Marketing
-                            </SelectItem>
-                            <SelectItem value="advertisements">
-                              Advertisements
-                            </SelectItem>
-                            <SelectItem value="production">
-                              Production
-                            </SelectItem>
-                            <SelectItem value="music">Music</SelectItem>
-                            <SelectItem value="films">Films</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormDescription>
-                        Please select a subject.
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          className="rounded-[8px]"
-                          placeholder="Your message..."
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormDescription>
-                        Please enter your message.
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full text-lg font-bold tracking-tight inline-flex items-center group"
-              >
-                {isSubmitting ? "Sending..." : "Submit"}{" "}
-                {isSubmitting ? (
-                  <LoaderIcon className="size-5 ml-2 animate-spin" />
-                ) : (
-                  <PiArrowRightBold className="ml-2 mb-0.5 size-5 group-hover:-rotate-45 transition-all duration-300 ease-in-out" />
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="max-w-2xl mx-auto space-y-4"
+            >
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <Input
+                    type="text"
+                    placeholder="Your name"
+                    {...field}
+                    required
+                  />
                 )}
-              </Button>
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <Input
+                    type="email"
+                    placeholder="Your email address"
+                    {...field}
+                    required
+                  />
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <Input
+                    type="text"
+                    placeholder="Subject"
+                    {...field}
+                    required
+                  />
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <Textarea
+                    placeholder="Your message"
+                    {...field}
+                    required
+                    className="h-32"
+                  />
+                )}
+              />
+              <div className="flex items-center justify-between">
+                <div
+                  className="g-recaptcha"
+                  data-sitekey="your_recaptcha_site_key"
+                ></div>
+                <Button
+                  type="submit"
+                  size={"sm"}
+                  disabled={isSubmitting}
+                  className="border-accent/20 text-sm w-full hover:bg-accent/10 h-11"
+                  variant={"outline"}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </div>
             </form>
           </Form>
-        </CardContent>
-      </Card>
+
+          <div className="mt-12 text-center">
+            <h3 className="text-xl font-semibold mb-4">
+              Connect with social media
+            </h3>
+            <div className="flex justify-center space-x-4">
+              <Link href="#" className="text-foreground hover:text-opacity-80">
+                <Facebook />
+              </Link>
+              <Link href="#" className="text-foreground hover:text-opacity-80">
+                <Instagram />
+              </Link>
+              <Link href="#" className="text-foreground hover:text-opacity-80">
+                <Twitter />
+              </Link>
+              <Link href="#" className="text-foreground hover:text-opacity-80">
+                <Youtube />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0126353064897!2d72.81742931490721!3d19.10679478706484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b888ae67fd%3A0xe274bcb68d6c2a2a!2sClean%20Slate%20Filmz!5e0!3m2!1sen!2sin!4v1623317981111!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </main>
     </div>
   )
 }

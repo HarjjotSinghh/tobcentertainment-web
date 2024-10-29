@@ -288,6 +288,15 @@ export default function ZyfloNavbar({
       )}
       {...props}
     >
+      <Link href="/" className="w-full h-auto select-none max-w-[150px]">
+        <img
+          src={"/logo-wide.png"}
+          alt={"TOBC Entertainment"}
+          width={300}
+          height={100}
+          className={"w-full h-full"}
+        />
+      </Link>
       <div className="mx-auto w-full max-w-7xl">
         <div className="flex w-full items-center justify-between space-x-16">
           {/* Logo */}
@@ -345,7 +354,7 @@ export default function ZyfloNavbar({
                       whileInView="animate"
                       viewport={{ once: true }}
                       key={item.title + " " + (index + 1).toString()}
-                      className=" text-base tracking-tight"
+                      className=" text-base tracking-normal"
                     >
                       <Link
                         key={index}
@@ -367,7 +376,7 @@ export default function ZyfloNavbar({
                 items.map((item, index) => (
                   <li
                     key={item.title + " " + (index + 1).toString()}
-                    className=" text-base tracking-tight"
+                    className=" text-base tracking-normal"
                   >
                     <Link
                       key={index}
@@ -409,7 +418,7 @@ export default function ZyfloNavbar({
             <RxHamburgerMenu className="size-5" />
           )}
         </ZyfloDrawerTrigger>
-        <ZyfloDrawerContent className="bg-accent">
+        <ZyfloDrawerContent className="bg-black">
           <ZyfloDrawerHeader className="mt-4 !text-left">
             {/* Logo With Animation */}
             <XIcon
@@ -512,7 +521,7 @@ export default function ZyfloNavbar({
                       whileInView="animate"
                       viewport={{ once: true }}
                       key={item.title + " " + (index + 1).toString()}
-                      className={`w-full tracking-widest text-foreground/80 py-2 zyflo-transition text-lg after:w-full after:h-[1px] after:bg-foreground last:after:hidden text-white after:absolute after:bottom-0 after:left-0 uppercase text-${
+                      className={`w-full tracking-widest text-foreground/80 py-2 zyflo-transition text-lg after:w-full after:h-[1px] after:bg-primary last:after:hidden text-white after:absolute after:bottom-0 after:left-0 uppercase text-${
                         mobileNavbarCentred ? "center" : "left"
                       }`}
                     >

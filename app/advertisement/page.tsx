@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button"
 export default function AdvertisementPage() {
   return (
     <div className="container mx-auto lg:px-8 px-4 py-8">
-      <h1 className="text-4xl font-extrabold tracking-tight mb-8">
+      <h1 className="text-4xl font-extrabold tracking-normal mb-8">
         Advertisement Services
       </h1>
       <section className="mb-8">
-        <h2 className="text-2xl font-extrabold tracking-tight mb-4">
+        <h2 className="text-2xl font-extrabold tracking-normal mb-4">
           Our Advertising Solutions
         </h2>
         <p>
@@ -16,7 +16,7 @@ export default function AdvertisementPage() {
         </p>
       </section>
       <section className="mb-8">
-        <h2 className="text-2xl font-extrabold tracking-tight mb-4">
+        <h2 className="text-2xl font-extrabold tracking-normal mb-4">
           Why Choose Us
         </h2>
         <ul className="list-disc pl-5">

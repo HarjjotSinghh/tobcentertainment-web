@@ -38,7 +38,7 @@ const films = [
 export default function FilmsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="md:text-5xl text-4xl font-extrabold tracking-tight mb-8">
+      <h1 className="md:text-5xl text-4xl font-extrabold tracking-normal mb-8">
         Our Films
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
